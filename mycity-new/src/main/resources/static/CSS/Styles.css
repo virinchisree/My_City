@@ -1,0 +1,666 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: whitesmoke;
+  height: 100vh;
+}
+
+.body {
+    padding: 1px 0 0 0;
+    background-image: 
+        url(/Img/home-img.jpg),
+        url(/Img/home2.webp),
+        url(/Img/home3.jpg),
+        url(/Img/home4.jpg),
+        url(/Img/home5.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 729px;
+    width: 100% !important;
+}
+
+.visa-body {
+    padding: 1px 0 0 0;
+    background-image: 
+        url(/Img/visakhapatnam-bg.jpg);
+    background-position:top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 400px;
+    width: 100% !important;
+}
+
+.sticky {
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+
+    header{
+        background-color: black;
+    }
+}
+
+.mobile_header{
+    display: none;
+}
+
+header{
+    background-color: rgba(0, 0, 0, 0.616);
+    display: flex;
+    flex-direction: row;
+    height: 60px;
+    margin: 20px 80px 0 80px;
+    justify-content:space-around;
+    align-items: center;
+    border-radius: 25px;
+}
+
+.logo_placeholder{
+    color: whitesmoke;
+    width: fixed;
+}
+
+.logo_placeholder img{
+	width: 80px;
+	height: 55px;
+}
+
+ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-content: space-evenly;
+    width: 800px !important;
+    list-style: none;
+
+    .nav_link{
+        padding: 10px 10px 10px 10px;
+        transition: all 0.2s ease-in-out;
+        a{
+            text-decoration: none;
+            color: whitesmoke;
+        }
+
+        &:hover{
+            border-bottom: 2px solid orange;
+            color: orange;
+
+            a{
+                color: orange;
+            }
+        }
+
+        &.active{
+            border-bottom: 2px solid orange;
+            color: orange;
+
+            a{
+                color: orange;
+            }
+        }
+    }
+}
+
+.login_button{
+    padding: 10px 15px 10px 15px;
+    border-radius: 15px;
+    width: fixed;
+    border: 2px solid orange;
+    outline: none;
+    background-color: orange;
+    cursor: pointer;
+
+    a{
+        text-decoration: none;
+        color: whitesmoke;
+    }
+}
+
+
+.text_block{
+    margin: 10px 0 0 50px;
+}
+
+.text-style_border{
+    font-size: 4.5rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: left;
+    color: orange;
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: black;
+    height: 59px;
+    align-items: center;
+
+    ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        list-style: none;
+        width: 300px !important;
+
+        li{
+            a{
+                text-decoration: none;
+                color: whitesmoke;
+
+                &:hover{
+                    color: beige;
+                }
+            }
+        }
+    }
+
+    p{
+        color: white;
+    }
+}
+
+/*This is for the Tourism main page*/
+.grid-container {
+    margin: 30px 0 30px 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 15px;
+    position: relative;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+	color: #ff6600;
+}
+
+.card-subtitle {
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 10px;
+    display: none;
+}
+
+.stars {
+    color: #fbc02d;
+    margin-bottom: 5px;
+	display: none;
+}
+
+.reviews {
+    font-size: 14px;
+    color: #777;
+	display: none;
+}
+
+/*This is for the carousel*/
+.carousel{
+    width: 100% !important;
+    height: 500px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.carousel_header{
+    margin: 30px 0 0 0 ;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.items {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    user-select: none;
+    margin-top: 40px;
+}
+
+.items .item {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 550px;
+    height: 250px;
+    overflow: hidden;
+    transition: all 300ms ease-in-out;
+    z-index: -1;
+    border-radius: 20px;
+    opacity: 0;
+}
+
+.item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item.active {
+    opacity: 1;
+    z-index: 99;
+    box-shadow: 0px 0px 105px -35px rgba(0, 0, 0, 0.75);
+}
+
+.item.prev {
+    z-index: 2;
+    opacity: 0.15;
+    height: 220px;
+    transform: translate(-125%, -50%);
+}
+
+.item.next {
+    z-index: 2;
+    opacity: 0.15;
+    height: 220px;
+    transform: translate(25%, -50%);
+}
+
+.items .button-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 610px;
+    z-index: 100;
+}
+
+.button-container .button {
+    color: #fff;
+    font-size: 32px;
+    cursor: pointer;
+    position: relative;
+    opacity: 1;
+    transition: all 300ms ease-in-out;
+}
+
+.button-container .button:hover {
+    opacity: 1;
+}
+
+.button-container .button:before {
+    content: "";
+    position: absolute;
+    top: 46%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-radius: 50%;
+    z-index: -99;
+}
+
+.button-container .button:nth-child(1) {
+    float: left;
+}
+
+.button-container .button:nth-child(2) {
+    float: right;
+}
+
+/*This is for about and history in tourist places*/
+.container {
+    width: 92%;
+    margin: 0 auto;
+}
+
+
+.section {
+    background-color: whitesmoke;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.section img {
+    max-width: 20%;
+    border-radius: 8px;
+}
+
+.text-section {
+    max-width: 75%;
+}
+
+.text-section h2 {
+    color: #ff7f32;
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.text-section p {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.map_container {
+    width: 80%;
+    margin: 50px auto;
+}
+
+.map_container iframe{
+    width: 100%;
+    min-height: 300px;
+}
+
+main-container {
+    text-align: center; /* Center text */
+    padding: 20px;
+}
+ 
+/* Heading for the main title */
+.heading h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+ 
+/* Use-timings division style */
+.use-timings {
+    background-color: #fff; /* White background */
+    border: 2px solid #ff6600; /* Orange border */
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin: 20px auto; /* Center the division in the container */
+    max-width: 600px; /* Control the width */
+}
+ 
+/* Subheading style */
+.use-timings h2 {
+    font-size: 28px;
+    color: #ff7f32;
+    margin-bottom: 15px;
+	text-align: center;
+}
+ 
+/* Style for each day with timings */
+.day-timing {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between; /* Space between day and times */
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+ 
+/* Day name style */
+.day-timing .day {
+    font-weight: bold;
+    color: #ff6600;
+    margin-right: 15px;
+}
+ 
+/* Time details style */
+.day-timing .time {
+    font-size: 16px;
+    color: #333;
+}
+
+.section img {
+    max-width: 20%;
+    border-radius: 8px;
+    border-top:7px solid;
+    border-left:7px solid;
+border-image-source: linear-gradient(to bottom right,orange 0%,orange 30%,white 40%,white 100%);
+border-image-slice: 1;
+}
+
+/*From here the coe is relatedd to mobile view*/
+/* Mobile view (max-width: 768px) */
+@media only screen and (max-width: 768px) {
+    .body {
+      background-image: 
+        url(/Img/home-img.jpg),
+        url(/Img/home2.webp),
+        url(/Img/home3.jpg),
+        url(/Img/home4.jpg),
+        url(/Img/home5.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 500px;
+      width: 100% !important;
+    }
+  
+    .mobile_header {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: black;
+      padding: 10px;
+      text-align: center;
+    }
+  
+    header{
+        background-color: rgba(0, 0, 0, 0.616);
+        display: flex;
+        flex-direction: row;
+        height: 60px;
+        margin: 20px 80px 0 80px;
+        justify-content:space-around;
+        align-items: center;
+        border-radius: 25px;
+    }
+    
+    .logo_placeholder{
+        color: whitesmoke;
+        width: fixed;
+    }
+    
+    ul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        justify-content: space-evenly;
+        width: 800px !important;
+        list-style: none;
+    
+        .nav_link{
+            padding: 10px 10px 10px 10px;
+            transition: all 0.2s ease-in-out;
+            a{
+                text-decoration: none;
+                color: whitesmoke;
+            }
+    
+            &:hover{
+                border-bottom: none;
+    
+                a{
+                    color: orange;
+                }
+            }
+    
+            &.active{
+                border-bottom: none;
+    
+                a{
+                    color: orange;
+                }
+            }
+        }
+    }
+    
+    .login_button{
+        padding: 10px 15px 10px 15px;
+        border-radius: 15px;
+        width: fixed;
+        border: 2px solid orange;
+        outline: none;
+        background-color: orange;
+        cursor: pointer;
+    
+        a{
+            text-decoration: none;
+            color: whitesmoke;
+        }
+    }
+  
+    .text_block {
+      margin: 30px 0 0 20px;
+    }
+  
+    .text-style_border {
+      font-size: .5rem;
+    }
+  
+    footer {
+      height: 40px;
+    }
+  
+    footer ul {
+      width: 200px !important;
+    }
+}
+  
+  /* Tablet view (min-width: 769px) */
+@media only screen and (max-width: 480px) {
+    .body {
+      background-image: 
+        url(/Img/home-img.jpg),
+        url(/Img/home2.webp),
+        url(/Img/home3.jpg),
+        url(/Img/home4.jpg),
+        url(/Img/home5.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 914px;
+      width: 100% !important;
+    }
+  
+    .mobile_header {
+      display: block;
+    }
+  
+    header{
+        background-color: rgb(0, 0, 0);
+        display: none;
+        height: 750px;
+        width: 100% !important;
+        position: fixed;
+        border-radius: 0;
+        margin: 55px 0 0 0;
+        text-align: center;
+    }
+    
+    .logo_placeholder{
+        color: whitesmoke;
+        width: fixed;
+    }
+    
+    ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        list-style: none;
+        margin-top: 50px;
+        height: 400px;
+        width: 100% !important;
+    
+        .nav_link{
+            transition: all 0.2s ease-in-out;
+            a{
+                text-decoration: none;
+                color: whitesmoke;
+                font-size: 1.8rem;
+            }
+        }
+    }
+    
+    .login_button{
+        margin-top: 80px;
+        padding: 10px 15px 10px 15px;
+        border-radius: 15px;
+        width: 60%;
+        border: 2px solid orange;
+        outline: none;
+        background-color: orange;
+        cursor: pointer;
+    
+        a{
+            text-decoration: none;
+            color: whitesmoke;
+        }
+    }
+  
+    .text_block {
+      margin: 300px 0 0 20px;
+    }
+  
+    .text-style_border {
+      font-size: 2.5rem;
+    }
+  
+    footer {
+      height: 150px;
+      display: block;
+      text-align: center;
+      align-content: center;
+      min-width: 100% !important;
+    }
+
+    .footer_nav-links_placeholder{
+        margin: 0 0 0 50px;
+    }
+
+    .footer_social-links_placeholder{
+        margin: 20px 0 20px 50px;
+    }
+  
+    footer ul {
+        text-align: center;
+        justify-content: space-around;
+        width: 300px !important;
+    }
+
+    .grid-container {
+        margin: 30px 0 30px 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+}

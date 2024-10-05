@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/CSS/Styles.css">
+    <style>
+        .container {
+            background-color:white;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+            position: relative;
+            overflow: hidden;
+            width: 768px;
+            max-width: 100%;
+            min-height: 400px;
+            margin-top: 30px;
+        }
+
+        .container p {
+            font-size: 14px;
+            line-height: 20px;
+            letter-spacing: 0.3px;
+            margin: 20px 0;
+        }
+
+        .container span {
+            font-size: 12px;
+        }
+
+        .container a {
+            color: #333;
+            font-size: 13px;
+            text-decoration: none;
+            margin: 15px 0 10px;
+        }
+
+        .container button {
+          /*   background-color: #2da0a8; */
+          background-color: #ffA500;
+            color: #fff;
+            font-size: 12px;
+            padding: 10px 45px;
+            border: 1px solid transparent;
+            border-radius: 8px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .container form {
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 0 40px;
+            height: 100%;
+        }
+
+        .container input {
+            background-color: #eee;
+            border: none;
+            margin: 8px 0;
+            padding: 10px 15px;
+            font-size: 13px;
+            border-radius: 8px;
+            width: 250px;
+            outline: none;
+            height: 40px;
+        }
+
+        .form-container {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            transition: all 0.6s ease-in-out;
+        }
+
+        .sign-in {
+            left: 0;
+            width: 50%;
+            z-index: 2;
+        }
+
+        .container.active .sign-in {
+            transform: translateX(100%);
+        }
+
+        .sign-up {
+            left: 0;
+            width: 50%;
+            opacity: 0;
+            z-index: 1;
+        }
+
+        .container.active .sign-up {
+            transform: translateX(100%);
+            opacity: 1;
+            z-index: 5;
+            animation: move 0.6s;
+        }
+
+        @keyframes move {
+            0%, 49.99% {
+                opacity: 0;
+                z-index: 1;
+            }
+            50%, 100% {
+                opacity: 1;
+                z-index: 5;
+            }
+        }
+
+        .social-icons {
+            margin: 20px 0;
+        }
+
+        .social-icons a {
+            border: 1px solid #ccc;
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 3px;
+            width: 40px;
+            height: 40px;
+        }
+
+        .toggle-container {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 50%;
+            height: 100%;
+            overflow: hidden;
+            transition: all 0.6s ease-in-out;
+            border-radius: 150px 0 0 100px;
+            z-index: 1000;
+        }
+
+        .container.active .toggle-container {
+            transform: translateX(-100%);
+            border-radius: 0 150px 100px 0;
+        }
+
+        .toggle {
+          /*   background-color: #2da0a8; */
+            height: 100%;
+          /*   background: linear-gradient(to right, #5c6bc0, #2da0a8); */
+          /*   background: linear-gradient(#ffa233,rgb(248, 238, 148)); */
+          background: linear-gradient(#ffa233,black);
+            color: #fff;
+            position: relative;
+            left: -100%;
+            height: 100%;
+            width: 200%;
+            transform: translateX(0);
+            transition: all 0.6s ease-in-out;
+        }
+
+        .container.active .toggle {
+            transform: translateX(50%);
+        }
+
+        .toggle-panel {
+            position: absolute;
+            width: 80%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Centers the content */
+            flex-direction: column;
+            padding: 0 30px;
+            text-align: center;
+            top: 0;
+            transform: translateX(0);
+            transition: all 0.6s ease-in-out;
+            color: white; /* Sets the text color to white */
+}
+
+.toggle-left h1, .toggle-left p,
+.toggle-right h1, .toggle-right p {
+    color: white; /* Ensures specific headings and paragraphs are white */
+    
+}
+
+
+        .toggle-left {
+            transform: translateX(-200%);
+        }
+
+        .container.active .toggle-left {
+            transform: translateX(0);
+        }
+
+        .toggle-right {
+            right: 0;
+            transform: translateX(0);
+        }
+
+        .container.active .toggle-right {
+            transform: translateX(200%);
+        }
+
+
+      
+  
+
+        /* Footer styling */
+        footer {
+            display: flex;
+            justify-content: space-around;
+            background-color: black;
+            padding: 20px;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer ul {
+            display: flex;
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-right: 20px;
+        }
+
+        footer ul li a {
+            text-decoration: none;
+            color: whitesmoke;
+        }
+
+        footer ul li a:hover {
+            color: beige;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header placed over the content -->
+    <div class="nav_header" id="myHeader">
+        <header>
+            <div class="logo_placeholder">
+                <h3>Logo</h3>
+            </div>
+            <div class="nav_links_placeholder">
+                <ul class="nav_links">
+                    <li class="nav_link"><a href="/"><span>Home</span></a></li>
+                    <li class="nav_link"><a href="/entertainment"><span>Entertainment</span></a></li>
+                    <li class="nav_link"><a href="#"><span>Shopping</span></a></li>
+                    <li class="nav_link"><a href="/tourism"><span>Tourism</span></a></li>
+                    <li class="nav_link"><a href="#"><span>Pay Bills</span></a></li>
+                    <li class="nav_link"><a href="#"><span>Hotels</span></a></li>
+                </ul>
+            </div>
+         <!--    <div class="login-button_placeholder">
+                <button class="login_button"><a href="/signup" class="signup-btn">Sign Up</a></button>
+            </div> -->
+        </header>
+    </div>
+
+    <!-- Form Container -->
+    <div class="container" id="container" th:classappend="${signupActive} ? 'active' : ''">
+        <div class="form-container sign-up" id="register">
+            <form id="register"  th:action="@{/processR}" th:object="${user}" method="post">
+                <h1>Sign Up</h1>
+                <!-- Username Field -->
+                <div class="form-group">
+                    <input type="text" id="name" th:field="*{name}" class="form-control" placeholder="Enter Your Name" required>
+<!--                     <div class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div> -->
+                    <div style="color: red;font-size: 10px;" class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</div>
+                </div>
+
+                <!-- Email Field -->
+                <div class="form-group">
+                    <input type="email" id="email" th:field="*{email}" class="form-control" placeholder="Enter Email" required>
+                    <div style="color: red;font-size: 10px;" class="text-danger" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email Error</div>
+                </div>
+
+              <!--   <div class="form-group">
+                    <input type="password" id="password" th:field="*{password}" class="form-control" placeholder="Password" required>
+                    <div style="color: red;font-size: 10px;" class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</div>
+                </div> -->
+
+                <div class="form-group position-relative" style="margin-left: 8px;">
+                    <input type="password" id="password" th:field="*{password}" class="form-control" placeholder="Password" required>
+                    <div style="color: red;font-size: 10px;" class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Password Error</div>
+                    
+                    <!-- Eye icon to toggle visibility -->
+                   <!--  <span class="toggle-password" onclick="togglePassword()" style="position: relative;right: 30px; top: 10%; transform: translateY(-20%); cursor: pointer;">
+                        <i id="toggle-icon" class="fa fa-eye" style="font-size: 13px;"></i>  
+                    </span> -->
+                </div>
+                
+                
+                <!-- Mobile Field -->
+                <div class="form-group">
+                    <input type="tel" id="mobile" th:field="*{mobile}" class="form-control" 
+                           placeholder="Enter Mobile Number" required 
+                           pattern="^\d{10}$" title="Mobile number must be exactly 10 digits" maxlength="10">
+                    <div style="color: red;font-size: 10px;" class="text-danger" th:if="${#fields.hasErrors('mobile')}" th:errors="*{mobile}">Mobile Error</div>
+                </div>
+
+                <!-- Address Field -->
+                <div class="form-group">
+                    <input type="text" id="address" th:field="*{address}" class="form-control" placeholder="Enter Address">
+                </div>
+
+                <button type="submit">Register</button>
+            </form>
+        </div>
+
+        <div class="form-container sign-in">
+            <form  id="register" th:action="@{/processL}" method="post" th:object="${user}" >
+                <h1>Sign In</h1>
+        
+                <input type="email" id="email" name="email" placeholder="Email" required th:field="*{email}"/>
+                <div th:if="${emailError}" class="error" style="color: red; width: 250px; font-size: 12px;">
+                    <p th:text="${emailError}"></p> <!-- Displays the email error message -->
+                </div>
+        
+                <input type="password" id="password" name="password" placeholder="Password" required th:field="*{password}"/>
+                <div th:if="${passwordError}" class="error" style="color: red; width: 250px; font-size: 12px;">
+                    <p th:text="${passwordError}"></p> <!-- Displays the password error message -->
+                </div>
+        
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+        
+
+        <div class="toggle-container">
+            <div class="toggle"></div>
+            <div class="toggle-panel toggle-left">
+                <h1>Welcome Back!</h1>
+                <p>Please sign in to your account.</p>
+                <button class="toggle-btn" id="sign-in-btn">Sign In</button>
+            </div>
+            <div class="toggle-panel toggle-right">
+                <h1>Join Us</h1>
+                <p>Create an account to get started.</p>
+                <button class="toggle-btn" id="sign-up-btn">Sign Up</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer_nav-links_placeholder">
+            <ul class="footer_nav-links">
+                <li class="footer_nav-link"><a href="#">About</a></li>
+                <li class="footer_nav-link"><a href="#">Contact</a></li>
+                <li class="footer_nav-link"><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <div class="footer_social-links_placeholder">
+            <ul class="footer_social-links">
+                <li class="footer_social-link"><a href="#">Facebook</a></li>
+                <li class="footer_social-link"><a href="#">Twitter</a></li>
+                <li class="footer_social-link"><a href="#">LinkedIn</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script>
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Get the email and password input fields by their IDs
+    const emailField = document.getElementById("email");
+    const passwordField = document.getElementById("password");
+
+    // Check if the fields exist before clearing their values
+    if (emailField) {
+        emailField.value = ''; // Clear the email field
+    }
+    
+    if (passwordField) {
+        passwordField.value = ''; // Clear the password field
+    }
+});
+
+
+
+        const signInButton = document.getElementById("sign-in-btn");
+        const signUpButton = document.getElementById("sign-up-btn");
+        const container = document.getElementById("container");
+
+        signUpButton.addEventListener("click", () => {
+            container.classList.add("active");
+        });
+
+        signInButton.addEventListener("click", () => {
+            container.classList.remove("active");
+        });
+
+
+        function togglePassword() {
+    var passwordField = document.getElementById("password");
+    var toggleIcon = document.getElementById("toggle-icon");
+
+    if (passwordField.type === "password") {
+        passwordField.type = "text";
+        toggleIcon.classList.remove("fa-eye");
+        toggleIcon.classList.add("fa-eye-slash");
+    } else {
+        passwordField.type = "password";
+        toggleIcon.classList.remove("fa-eye-slash");
+        toggleIcon.classList.add("fa-eye");
+    }
+}
+
+    </script>
+</body>
+</html>
