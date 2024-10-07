@@ -112,7 +112,7 @@
 
     <div class="main-container">
         <div class="heading">
-            <h1>Kailasakona Waterfalls</h1>
+           
         </div>
         <div class="use-timings">
             <h2>Opening and Closing Timings</h2>
@@ -128,9 +128,7 @@
     </div>
 
     <div class="map_container">
-        <iframe
-            src="https://www.google.co.in/maps/place/Visakhapatnam,+Andhra+Pradesh/@17.7390511,82.9329177,10z/data=!3m1!4b1!4m6!3m5!1s0x3a39431389e6973f:0x92d9c20395498468!8m2!3d17.6868159!4d83.2184815!16zL20vMDFqbXBm?entry=ttu&g_ep=EgoyMDI0MDkyNS4wIKXMDSoASAFQAw%3D%3D"
-            frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248408.83412614968!2d79.34469968671874!3d13.388282599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4d58b5298afe09%3A0x4f36e6b3da303014!2sKailasa%20Kona%20falls!5e0!3m2!1sen!2sin!4v1728280091068!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <footer>
         <div class="footer_nav-links_placeholder">
@@ -178,47 +176,47 @@
     </footer>
 </body>
 <script>
-    // I will be creating a different pen with touch support but right // now I have no time for it due to school
-
     const slider = document.querySelector(".items");
-    const slides = document.querySelectorAll(".item");
-    const button = document.querySelectorAll(".button");
+const slides = document.querySelectorAll(".item");
+const button = document.querySelectorAll(".button");
 
-    let current = 0;
-    let prev = 4;
-    let next = 1;
+let current = 0;
+let prev = 3; // For 4 images, the previous image index will be 3 (the last one).
+let next = 1; // The next image index will start from 1 (the second one).
 
-    for (let i = 0; i < button.length; i++) {
-        button[i].addEventListener("click", () => i == 0 ? gotoPrev() : gotoNext());
-    }
+for (let i = 0; i < button.length; i++) {
+	button[i].addEventListener("click", () => i == 0 ? gotoPrev() : gotoNext());
+}
 
-    const gotoPrev = () => current > 0 ? gotoNum(current - 1) : gotoNum(slides.length - 1);
+const gotoPrev = () => current > 0 ? gotoNum(current - 1) : gotoNum(slides.length - 1);
 
-    const gotoNext = () => current < 4 ? gotoNum(current + 1) : gotoNum(0);
+const gotoNext = () => current < 3 ? gotoNum(current + 1) : gotoNum(0);
 
-    const gotoNum = number => {
-        current = number;
-        prev = current - 1;
-        next = current + 1;
+const gotoNum = number => {
+	current = number;
+	prev = current - 1;
+	next = current + 1;
 
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].classList.remove("active");
-            slides[i].classList.remove("prev");
-            slides[i].classList.remove("next");
-        }
+	for (let i = 0; i < slides.length; i++) {
+		slides[i].classList.remove("active");
+		slides[i].classList.remove("prev");
+		slides[i].classList.remove("next");
+	}
 
-        if (next == 5) {
-            next = 0;
-        }
+	// Wrap the indices around if they go out of bounds
+	if (next == 4) {
+		next = 0;
+	}
 
-        if (prev == -1) {
-            prev = 4;
-        }
+	if (prev == -1) {
+		prev = 3;
+	}
 
-        slides[current].classList.add("active");
-        slides[prev].classList.add("prev");
-        slides[next].classList.add("next");
-    }
+	slides[current].classList.add("active");
+	slides[prev].classList.add("prev");
+	slides[next].classList.add("next");
+}
 </script>
+
 
 </html>

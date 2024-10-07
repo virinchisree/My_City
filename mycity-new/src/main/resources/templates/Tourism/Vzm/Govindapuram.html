@@ -39,7 +39,7 @@
         <div class="items">
             <div class="item active">
                 <img
-                    src="https://scontent.fvga2-2.fna.fbcdn.net/v/t31.18172-8/28235004_636586380011115_2744883782760815509_o.jpg?stp=dst-jpg_p526x395&_nc_cat=102&ccb=1-7&_nc_sid=7b2446&_nc_ohc=XftEnE0df3gQ7kNvgE8TjZd&_nc_ht=scontent.fvga2-2.fna&_nc_gid=A6karcFabs3tduilcSNcYHq&oh=00_AYA5gmYAsqiR9gUO_LgcGenCWgteEo_x80YBmB8EuV1nDA&oe=67221C73">
+                    src="https://www.onefivenine.com/images/districtimages/Andhra%20Pradesh/Vizianagaram/3.jpg">
             </div>
             <div class=" item next">
                 <img
@@ -107,7 +107,7 @@
                     from various regions who come to offer prayers and seek blessings from the deity.
                 </p>
             </div>
-            <img src="https://scontent.fvga2-4.fna.fbcdn.net/v/t31.18172-8/28164411_636586480011105_7091046994975550528_o.jpg?stp=dst-jpg_p526x395&_nc_cat=110&ccb=1-7&_nc_sid=7b2446&_nc_ohc=xtT-Pwl_xm0Q7kNvgGwDXit&_nc_ht=scontent.fvga2-4.fna&_nc_gid=AIu05TpkIF7CKXtwwOecE3m&oh=00_AYC6qSkgi0mXnYdgkQpq6GAbXD46dtPM5jrZbHF2F4fqgg&oe=672216D0"
+            <img src="https://www.onefivenine.com/images/districtimages/Andhra%20Pradesh/Vizianagaram/3.jpg"
                 alt="INS Kursura Image">
         </div>
     </div>
@@ -115,7 +115,7 @@
 
     <div class="main-container">
         <div class="heading">
-            <h1>Govindapuram Temple</h1>
+            
         </div>
         <div class="use-timings">
             <h2>Opening and Closing Timings</h2>
@@ -132,10 +132,7 @@
     </div>
 
     <div class="map_container">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.4768400904227!2d79.68823896896808!3d13.750093367836568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4d3f81f2963fdf%3A0xa41960ce1d92eeaf!2sSrikalahasti%20temple%20entrance%20gate!5e0!3m2!1sen!2sin!4v1727620030839!5m2!1sen!2sin"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30338.957772118563!2d83.57612403751675!3d18.100709898650077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3bf866c2e3cad7%3A0xcb91b806b4706b9f!2sGeetha%20bhavan%2C%20Govindapuram!5e0!3m2!1sen!2sin!4v1728288751144!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <footer>
         <div class="footer_nav-links_placeholder">
@@ -186,44 +183,45 @@
     // I will be creating a different pen with touch support but right // now I have no time for it due to school
 
     const slider = document.querySelector(".items");
-    const slides = document.querySelectorAll(".item");
-    const button = document.querySelectorAll(".button");
+const slides = document.querySelectorAll(".item");
+const button = document.querySelectorAll(".button");
 
-    let current = 0;
-    let prev = 4;
-    let next = 1;
+let current = 0;
+let prev = 2; // For 3 images, the previous image index will be 2 (the last one).
+let next = 1; // The next image index will start from 1 (the second one).
 
-    for (let i = 0; i < button.length; i++) {
-        button[i].addEventListener("click", () => i == 0 ? gotoPrev() : gotoNext());
-    }
+for (let i = 0; i < button.length; i++) {
+	button[i].addEventListener("click", () => i == 0 ? gotoPrev() : gotoNext());
+}
 
-    const gotoPrev = () => current > 0 ? gotoNum(current - 1) : gotoNum(slides.length - 1);
+const gotoPrev = () => current > 0 ? gotoNum(current - 1) : gotoNum(slides.length - 1);
 
-    const gotoNext = () => current < 4 ? gotoNum(current + 1) : gotoNum(0);
+const gotoNext = () => current < 2 ? gotoNum(current + 1) : gotoNum(0);
 
-    const gotoNum = number => {
-        current = number;
-        prev = current - 1;
-        next = current + 1;
+const gotoNum = number => {
+	current = number;
+	prev = current - 1;
+	next = current + 1;
 
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].classList.remove("active");
-            slides[i].classList.remove("prev");
-            slides[i].classList.remove("next");
-        }
+	for (let i = 0; i < slides.length; i++) {
+		slides[i].classList.remove("active");
+		slides[i].classList.remove("prev");
+		slides[i].classList.remove("next");
+	}
 
-        if (next == 5) {
-            next = 0;
-        }
+	// Wrap the indices around if they go out of bounds
+	if (next == 3) {
+		next = 0;
+	}
 
-        if (prev == -1) {
-            prev = 4;
-        }
+	if (prev == -1) {
+		prev = 2;
+	}
 
-        slides[current].classList.add("active");
-        slides[prev].classList.add("prev");
-        slides[next].classList.add("next");
-    }
+	slides[current].classList.add("active");
+	slides[prev].classList.add("prev");
+	slides[next].classList.add("next");
+}
 </script>
 
 </html>

@@ -42,10 +42,10 @@
             </div>
             <div class=" item next">
                 <img
-                    src="https://scontent.fvga2-3.fna.fbcdn.net/v/t39.30808-6/429749705_817542563742051_5040131086008897620_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=mzWZPE7QQOUQ7kNvgE_wMog&_nc_ht=scontent.fvga2-3.fna&_nc_gid=AypP0PXmdGgr4bZx9zXxgxG&oh=00_AYBBF4lCI1PYLr0NlYJuc886vz_o-Tz8cuC-ZhrurxNkyg&oe=6701C1D3">
+                    src="https://lh5.googleusercontent.com/p/AF1QipMhR7O757FYJ1dkxwRBlb0Mf-7u9IvXwjjFCgaa=w540-h312-n-k-no">
             </div>
 
-
+              
             <div class="item prev">
                 <img
                     src="https://scontent.fvga2-1.fna.fbcdn.net/v/t1.6435-9/95125777_3024695140907241_1511872782189723648_n.jpg?stp=dst-jpg_p526x296&_nc_cat=105&ccb=1-7&_nc_sid=7b2446&_nc_ohc=wJpsseG0xr0Q7kNvgHrwLgy&_nc_ht=scontent.fvga2-1.fna&oh=00_AYAAjt1FP6IVdYe_-yeBaFgrLEIyKBtaLn2JS7xcq_82Gg&oe=67234383">
@@ -185,44 +185,45 @@
     // I will be creating a different pen with touch support but right // now I have no time for it due to school
 
     const slider = document.querySelector(".items");
-    const slides = document.querySelectorAll(".item");
-    const button = document.querySelectorAll(".button");
+const slides = document.querySelectorAll(".item");
+const button = document.querySelectorAll(".button");
 
-    let current = 0;
-    let prev = 4;
-    let next = 1;
+let current = 0;
+let prev = 2; // For 3 images, the previous image index will be 2 (the last one).
+let next = 1; // The next image index will start from 1 (the second one).
 
-    for (let i = 0; i < button.length; i++) {
-        button[i].addEventListener("click", () => i == 0 ? gotoPrev() : gotoNext());
-    }
+for (let i = 0; i < button.length; i++) {
+	button[i].addEventListener("click", () => i == 0 ? gotoPrev() : gotoNext());
+}
 
-    const gotoPrev = () => current > 0 ? gotoNum(current - 1) : gotoNum(slides.length - 1);
+const gotoPrev = () => current > 0 ? gotoNum(current - 1) : gotoNum(slides.length - 1);
 
-    const gotoNext = () => current < 4 ? gotoNum(current + 1) : gotoNum(0);
+const gotoNext = () => current < 2 ? gotoNum(current + 1) : gotoNum(0);
 
-    const gotoNum = number => {
-        current = number;
-        prev = current - 1;
-        next = current + 1;
+const gotoNum = number => {
+	current = number;
+	prev = current - 1;
+	next = current + 1;
 
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].classList.remove("active");
-            slides[i].classList.remove("prev");
-            slides[i].classList.remove("next");
-        }
+	for (let i = 0; i < slides.length; i++) {
+		slides[i].classList.remove("active");
+		slides[i].classList.remove("prev");
+		slides[i].classList.remove("next");
+	}
 
-        if (next == 5) {
-            next = 0;
-        }
+	// Wrap the indices around if they go out of bounds
+	if (next == 3) {
+		next = 0;
+	}
 
-        if (prev == -1) {
-            prev = 4;
-        }
+	if (prev == -1) {
+		prev = 2;
+	}
 
-        slides[current].classList.add("active");
-        slides[prev].classList.add("prev");
-        slides[next].classList.add("next");
-    }
+	slides[current].classList.add("active");
+	slides[prev].classList.add("prev");
+	slides[next].classList.add("next");
+}
 </script>
 
 </html>
