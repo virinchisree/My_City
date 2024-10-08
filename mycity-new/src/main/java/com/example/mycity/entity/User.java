@@ -1,4 +1,4 @@
-package com.example.mycity.entity;
+ package com.example.mycity.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

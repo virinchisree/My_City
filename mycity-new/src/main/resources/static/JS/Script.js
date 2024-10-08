@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
     currentImage = (currentImage + 1) % images.length;
   }
 
-  setInterval(changeImage, 10000); // Change image every 10 seconds
+  setInterval(changeImage, 5000); // Change image every 5 seconds
 });
 
 const mobileHeader = document.querySelector('.mobile_header');

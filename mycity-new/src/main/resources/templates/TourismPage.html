@@ -24,7 +24,7 @@
             left: 0;
             width: 100%;
             padding: 20px;
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: black;
             /* Semi-transparent background */
             color: white;
             z-index: 1000;
@@ -52,7 +52,7 @@
         }
 
         header {
-            background-color: rgba(0, 0, 0, 0.616);
+            background-color: black;
             display: flex;
             flex-direction: row;
             height: 60px;
@@ -160,6 +160,7 @@
             }
         }
     </style>
+	<script src="https://unpkg.com/htmx.org@2.0.3" integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -184,7 +185,7 @@
                     <img src="/img/logo.jpg" alt="logo">
                 </div>
                 <div class="nav_links_placeholder">
-                    <ul class="nav_links">
+                    <ul class="nav_links" hx-boost="true">
                         <li class="nav_link"><a href="/"><span>Home</span></a></li>
                         <li class="nav_link"><a href="/entertainment"><span>Entertainment</span></a></li>
                         <li class="nav_link"><a href="/shopping"><span>Shopping</span></a></li>
@@ -435,7 +436,7 @@
             <!-- Card 17 -->
             <a th:href="@{/Parvathipuram-Tourism}" style="text-decoration: none;">
                 <div class="card">
-                    <img src="https://via.placeholder.com/300" alt="Destination Image">
+                    <img src="https://www.deccanchronicle.com/h-upload/2024/09/22/500x300_1844354-22vzdc05.webp" alt="Destination Image">
                     <div class="card-content">
                         <div class="card-title">Parvathipuram Manyam</div>
                         <div class="card-subtitle">Lorem ipsum dolor sit amet</div>
@@ -608,7 +609,7 @@
     <script>
         // Initialize carousel with JS for automatic scroll
         var myCarousel = new bootstrap.Carousel(document.querySelector('#carouselExampleIndicators'), {
-            interval: 10000, // 10000ms = 10 seconds
+            interval: 5000, // 5000ms = 5 seconds
             ride: 'carousel'
         });
     </script>

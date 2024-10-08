@@ -39,17 +39,17 @@
         </div>
         <div class="items">
             <div class="item active">
-                <img src="/Img/Draksharam1.jfif">
+                <img src="/Img/draksharam1.jpg">
             </div>
             <div class=" item next">
-                <img src="/Img/Draksharam2.jfif">
+                <img src="/Img/draksharam2.jpg">
             </div>
             <div class="item">
-                <img src="/Img/Draksharam3.jfif">
+                <img src="/Img/draksharam3.jpg">
             </div>
 
             <div class="item prev">
-                <img src="/Img/Draksharam4.jfif">
+                <img src="/Img/draksharam4.jpg">
             </div>
 
             <div class="button-container">
@@ -82,7 +82,7 @@
     </div>
     <div class="container">
         <div class="section">
-            <img src="/Img/Draksharamn.jfif" alt="Image">
+            <img src="/Img/draksharam4.jpg" alt="Image">
             <div class="text-section">
                 <h2>About</h2>
                 <p>Draksharamam or Daksharamam (దక్షారామం) is one of the five Pancharama Kshetras that are
@@ -109,7 +109,7 @@
                     temple in Samarlakota that was built between 892 C.E. and 922 C.E.
                 </p>
             </div>
-            <img src="/Img/Draksharamnn.jfif" alt="Image">
+            <img src="/Img/draksharam3.jpg" alt="Image">
         </div>
     </div>
 
@@ -181,46 +181,46 @@
 </body>
 <script>
     // I will be creating a different pen with touch support but right // now I have no time for it due to school
+	const slider = document.querySelector(".items");
+		const slides = document.querySelectorAll(".item");
+		const button = document.querySelectorAll(".button");
 
-    const slider = document.querySelector(".items");
-    const slides = document.querySelectorAll(".item");
-    const button = document.querySelectorAll(".button");
+		let current = 0;
+		let prev = 3; // For 4 images, the previous image index will be 3 (the last one).
+		let next = 1; // The next image index will start from 1 (the second one).
 
-    let current = 0;
-    let prev = 4;
-    let next = 1;
+		for (let i = 0; i < button.length; i++) {
+			button[i].addEventListener("click", () => i == 0 ? gotoPrev() : gotoNext());
+		}
 
-    for (let i = 0; i < button.length; i++) {
-        button[i].addEventListener("click", () => i == 0 ? gotoPrev() : gotoNext());
-    }
+		const gotoPrev = () => current > 0 ? gotoNum(current - 1) : gotoNum(slides.length - 1);
 
-    const gotoPrev = () => current > 0 ? gotoNum(current - 1) : gotoNum(slides.length - 1);
+		const gotoNext = () => current < 3 ? gotoNum(current + 1) : gotoNum(0);
 
-    const gotoNext = () => current < 4 ? gotoNum(current + 1) : gotoNum(0);
+		const gotoNum = number => {
+			current = number;
+			prev = current - 1;
+			next = current + 1;
 
-    const gotoNum = number => {
-        current = number;
-        prev = current - 1;
-        next = current + 1;
+			for (let i = 0; i < slides.length; i++) {
+				slides[i].classList.remove("active");
+				slides[i].classList.remove("prev");
+				slides[i].classList.remove("next");
+			}
 
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].classList.remove("active");
-            slides[i].classList.remove("prev");
-            slides[i].classList.remove("next");
-        }
+			// Wrap the indices around if they go out of bounds
+			if (next == 4) {
+				next = 0;
+			}
 
-        if (next == 5) {
-            next = 0;
-        }
+			if (prev == -1) {
+				prev = 3;
+			}
 
-        if (prev == -1) {
-            prev = 4;
-        }
-
-        slides[current].classList.add("active");
-        slides[prev].classList.add("prev");
-        slides[next].classList.add("next");
-    }
+			slides[current].classList.add("active");
+			slides[prev].classList.add("prev");
+			slides[next].classList.add("next");
+		}
 </script>
 
 </html>

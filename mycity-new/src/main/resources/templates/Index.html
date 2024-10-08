@@ -7,6 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>MyCity</title>
         <link rel="stylesheet" href="/CSS/Styles.css">
+		<script src="https://unpkg.com/htmx.org@2.0.3" integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq" crossorigin="anonymous"></script>
     </head>
     <body>
         <div class="body">        
@@ -24,7 +25,7 @@
 						<img src="/img/logo.jpg" alt="logo" >
                     </div>
                     <div class="nav_links_placeholder">
-                        <ul class="nav_links">
+                        <ul class="nav_links" hx-boost="true">
                             <li class="nav_link active"><a href="/"><span>Home</span></a></li>
                             <li class="nav_link"><a href="/entertainment"><span>Entertainment</span></a></li>
                             <li class="nav_link"><a href="/shopping"><span>Shopping</span></a></li>

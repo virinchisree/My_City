@@ -38,17 +38,17 @@
         </div>
         <div class="items">
             <div class="item active">
-                <img src="/Img/Y1.jpg">
+                <img src="https://assets-news.housing.com/news/wp-content/uploads/2022/08/29161137/Yanam-7.jpg">
             </div>
             <div class=" item next">
-                <img src="/Img/Y2.jpg">
+                <img src="https://assets-news.housing.com/news/wp-content/uploads/2022/08/29073909/YANAM-FEATURE-compressed.jpg">
             </div>
             <div class="item">
-                <img src="/Img/Y3.jfif">
+                <img src="https://mountainvalley.in/assets/images/yanam-beach-1000x504.jpg">
             </div>
 
             <div class="item prev">
-                <img src="/Img/Y4.jpg">
+                <img src="https://assets.traveltriangle.com/blog/wp-content/uploads/2018/01/Yanam-Beach-kb75325rdshtdf.jpg">
             </div>
             <div class="button-container">
                 <div class="button">
@@ -116,7 +116,7 @@
 
                 </p>
             </div>
-            <img src="/Img/Ynn.jfif" alt="INS Kursura Image">
+            <img src="https://assets.traveltriangle.com/blog/wp-content/uploads/2018/01/Yanam-Beach-kb75325rdshtdf.jpg" alt="Image">
         </div>
     </div>
 
@@ -128,7 +128,7 @@
             <div class="day-timing">
                 <div class="day">Monday - Sunday</div>
                 <div class="time">
-                    Opening Time: 6:00 AM, Closing Time: 6:00 PM
+                    Open 24 hours
 
                 </div>
             </div>
@@ -190,45 +190,46 @@
 <script>
     // I will be creating a different pen with touch support but right // now I have no time for it due to school
 
-    const slider = document.querySelector(".items");
-    const slides = document.querySelectorAll(".item");
-    const button = document.querySelectorAll(".button");
+	const slider = document.querySelector(".items");
+	const slides = document.querySelectorAll(".item");
+	const button = document.querySelectorAll(".button");
 
-    let current = 0;
-    let prev = 4;
-    let next = 1;
+	let current = 0;
+	let prev = 3; // For 4 images, the previous image index will be 3 (the last one).
+	let next = 1; // The next image index will start from 1 (the second one).
 
-    for (let i = 0; i < button.length; i++) {
-        button[i].addEventListener("click", () => i == 0 ? gotoPrev() : gotoNext());
-    }
+	for (let i = 0; i < button.length; i++) {
+		button[i].addEventListener("click", () => i == 0 ? gotoPrev() : gotoNext());
+	}
 
-    const gotoPrev = () => current > 0 ? gotoNum(current - 1) : gotoNum(slides.length - 1);
+	const gotoPrev = () => current > 0 ? gotoNum(current - 1) : gotoNum(slides.length - 1);
 
-    const gotoNext = () => current < 4 ? gotoNum(current + 1) : gotoNum(0);
+	const gotoNext = () => current < 3 ? gotoNum(current + 1) : gotoNum(0);
 
-    const gotoNum = number => {
-        current = number;
-        prev = current - 1;
-        next = current + 1;
+	const gotoNum = number => {
+		current = number;
+		prev = current - 1;
+		next = current + 1;
 
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].classList.remove("active");
-            slides[i].classList.remove("prev");
-            slides[i].classList.remove("next");
-        }
+		for (let i = 0; i < slides.length; i++) {
+			slides[i].classList.remove("active");
+			slides[i].classList.remove("prev");
+			slides[i].classList.remove("next");
+		}
 
-        if (next == 5) {
-            next = 0;
-        }
+		// Wrap the indices around if they go out of bounds
+		if (next == 4) {
+			next = 0;
+		}
 
-        if (prev == -1) {
-            prev = 4;
-        }
+		if (prev == -1) {
+			prev = 3;
+		}
 
-        slides[current].classList.add("active");
-        slides[prev].classList.add("prev");
-        slides[next].classList.add("next");
-    }
+		slides[current].classList.add("active");
+		slides[prev].classList.add("prev");
+		slides[next].classList.add("next");
+	}
 </script>
 
 </html>
