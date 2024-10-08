@@ -21,13 +21,15 @@ public class User {
     private int id;
 
     @NotBlank(message = "Name is required")
-    @Size(min = 2, message = "Name must have at least 2 characters")
-    @Pattern(regexp = "^[a-zA-Z\\s]+$", message = "Name has only letters and spaces")
+    @Size(min = 4, message = "Name must have at least 4 characters")
+    @Pattern(regexp = "^[a-zA-Z][a-zA-Z\\s]*$", message = "Name is invalid")
+    @Pattern(regexp = "(?!.*\\b[a-zA-Z]\\b).*", message = "Name cannot contain single letters separated by spaces")
+    @Pattern(regexp = "^[a-zA-Z]+(\\s{1,2}[a-zA-Z]+)*$", message = "Only one or two spaces are allowed between words")
     @Column(name = "name")
     private String name;
 
     @NotBlank(message = "Email is required")
-    @Pattern(regexp = "^[a-zA-Z0-9._%+-]+@(gmail|hotmail|yahoo)\\.com$", message = "Email must be a valid")
+    @Pattern(regexp = "^[a-zA-Z][a-z0-9._%+-]*@(gmail|hotmail|yahoo)\\.com$", message = "Email must start with a letter, followed by lowercase letters or digits and must use only gmail, hotmail, or yahoo domains")
     @Column(name = "email")
     private String email;
 
@@ -44,13 +46,15 @@ private String password;
 
 
 @NotBlank(message = "Mobile number is required")
-@Pattern(regexp = "^(?!0{10})\\d{10}$", message = "Mobile number must be valid")
+@Pattern(regexp = "^(?!0{10})(?!([0-9])\\1{9})(?!.*([0-9])\\2{4})\\d{10}$", message = "Mobile number must be invalid")
 @Column(name = "mobile")
-private String mobile;
+private String mobile;  
 
 
-    @Column(name = "address")
-    private String address;
+@NotBlank(message = "Address is required")
+@Pattern(regexp = "^[^\\s][a-zA-Z0-9]+([\\s]?[a-zA-Z0-9]|[\\s]?[/\\-,](?![/\\-,]))*$", message = "Address is invalid")
+@Column(name = "address")
+private String address;
 
 
     public User(){
