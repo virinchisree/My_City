@@ -39,9 +39,9 @@
         <div class="items">
             <div class="item active">
                 <img
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Meesalasimham.JPG/1024px-Meesalasimham.JPG">
+                    src="https://th.bing.com/th/id/R.d39615ad0873a6f19990a90ed3b0adab?rik=4scW4rVcpSMOQQ&riu=http%3a%2f%2findiainoneplace.com%2fwp-content%2fuploads%2f2018%2f10%2fBobbili_Fort3.jpg&ehk=oSuZtkF9venq5UcD7aH2n71xhhiIfImkm3EM1%2fd6tm8%3d&risl=&pid=ImgRaw&r=0">
             </div>
-            <div class="item active">
+            <div class="item next">
                 <img
                     src="https://scontent.fvga2-2.fna.fbcdn.net/v/t1.6435-9/120241268_1317974135220785_7247990405991146426_n.jpg?stp=dst-jpg_p235x350&_nc_cat=107&ccb=1-7&_nc_sid=13d280&_nc_ohc=mjRQUdOy27gQ7kNvgE8NrCf&_nc_ht=scontent.fvga2-2.fna&oh=00_AYDZdHHEVtYPtJCbNcXEKbbDWV2au4KDSwACANOn1aNb6Q&oe=67220A39">
             </div>
@@ -80,7 +80,7 @@
     <div class="container">
         <div class="section">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/This_is_place_for_recreation_or_Musical_concerts_in_the_olden_days.Side_View..JPG/375px-This_is_place_for_recreation_or_Musical_concerts_in_the_olden_days.Side_View..JPG"
-                alt="INS Kursura Image">
+                alt="Image">
             <div class="text-section">
                 <h2>About</h2>
                 <p>Bobbili Fort is renowned for its impressive architecture and historical significance. It is
@@ -108,7 +108,7 @@
                 </p>
             </div>
             <img src="https://scontent.fvga2-4.fna.fbcdn.net/v/t1.6435-9/120315736_1317974118554120_3982813149558640537_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=13d280&_nc_ohc=aUUz86TeWEwQ7kNvgHffG54&_nc_ht=scontent.fvga2-4.fna&oh=00_AYDjxsA0UUUbTxQp6fW2v0v3UkRV0NOpt45sb_akkUhmtw&oe=67220A95"
-                alt="INS Kursura Image">
+                alt="Image">
         </div>
     </div>
 
@@ -123,7 +123,7 @@
             <div class="day-timing">
                 <div class="day">Monday - Sunday</div>
                 <div class="time">
-                    Opening Time: 9:00 AM, Closing Time: 5:00 PM
+                    Opening Time: 10:00 AM, Closing Time: 6:00 PM
                 </div>
             </div>
 
@@ -132,10 +132,7 @@
     </div>
 
     <div class="map_container">
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3875.4768400904227!2d79.68823896896808!3d13.750093367836568!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4d3f81f2963fdf%3A0xa41960ce1d92eeaf!2sSrikalahasti%20temple%20entrance%20gate!5e0!3m2!1sen!2sin!4v1727620030839!5m2!1sen!2sin"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3781.9959797818497!2d83.35542597501448!3d18.574219982529854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3b9b9531dedef7%3A0xff5e93d7b00162f2!2sBobbili%20Kota!5e0!3m2!1sen!2sin!4v1728367731957!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <footer>
         <div class="footer_nav-links_placeholder">
@@ -185,45 +182,46 @@
 <script>
     // I will be creating a different pen with touch support but right // now I have no time for it due to school
 
-    const slider = document.querySelector(".items");
-    const slides = document.querySelectorAll(".item");
-    const button = document.querySelectorAll(".button");
+	const slider = document.querySelector(".items");
+			const slides = document.querySelectorAll(".item");
+			const button = document.querySelectorAll(".button");
 
-    let current = 0;
-    let prev = 4;
-    let next = 1;
+			let current = 0;
+			let prev = 2; // For 3 images, the previous image index will be 2 (the last one).
+			let next = 1; // The next image index will start from 1 (the second one).
 
-    for (let i = 0; i < button.length; i++) {
-        button[i].addEventListener("click", () => i == 0 ? gotoPrev() : gotoNext());
-    }
+			for (let i = 0; i < button.length; i++) {
+				button[i].addEventListener("click", () => i == 0 ? gotoPrev() : gotoNext());
+			}
 
-    const gotoPrev = () => current > 0 ? gotoNum(current - 1) : gotoNum(slides.length - 1);
+			const gotoPrev = () => current > 0 ? gotoNum(current - 1) : gotoNum(slides.length - 1);
 
-    const gotoNext = () => current < 4 ? gotoNum(current + 1) : gotoNum(0);
+			const gotoNext = () => current < 2 ? gotoNum(current + 1) : gotoNum(0);
 
-    const gotoNum = number => {
-        current = number;
-        prev = current - 1;
-        next = current + 1;
+			const gotoNum = number => {
+				current = number;
+				prev = current - 1;
+				next = current + 1;
 
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].classList.remove("active");
-            slides[i].classList.remove("prev");
-            slides[i].classList.remove("next");
-        }
+				for (let i = 0; i < slides.length; i++) {
+					slides[i].classList.remove("active");
+					slides[i].classList.remove("prev");
+					slides[i].classList.remove("next");
+				}
 
-        if (next == 5) {
-            next = 0;
-        }
+				// Wrap the indices around if they go out of bounds
+				if (next == 3) {
+					next = 0;
+				}
 
-        if (prev == -1) {
-            prev = 4;
-        }
+				if (prev == -1) {
+					prev = 2;
+				}
 
-        slides[current].classList.add("active");
-        slides[prev].classList.add("prev");
-        slides[next].classList.add("next");
-    }
+				slides[current].classList.add("active");
+				slides[prev].classList.add("prev");
+				slides[next].classList.add("next");
+			}
 </script>
 
 </html>

@@ -41,11 +41,8 @@
             <div class="item active">
                 <img src="http://villaresorts.in/assets/uploads/news-21.jpg">
             </div>
-            <div class=" item next">
-                <img
-                    src="https://www.go2india.in/ap/images/ryali1.JPG">
-            </div>
-            <div class="item">
+            
+            <div class="item next">
                 <img
                     src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQFdBTb6kp2tJrtauLdlimgC4BIWbv1AoPJKUJchr5mzCRu8AJpY6wHFrsvFAd6Q7vgVxcR6fK-VQTLEFK_DN3rnXWQ3J0cMpEi3gT8OrIcZPeQyLcqOD3Br0PGmf11IIitlmpHC1godPB/s200/300.jpg">
             </div>
@@ -85,7 +82,7 @@
     <div class="container">
         <div class="section">
             <img src="https://www.go2india.in/ap/images/ryali1.JPG"
-                alt="INS Kursura Image">
+                alt="Image">
             <div class="text-section">
                 <h2>About</h2>
                 <p>Sri Jaganmohini Kesava Swamy Temple in Ryali is a significant pilgrimage site that attracts devotees
@@ -114,7 +111,7 @@
                 </p>
             </div>
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTpPy1O2dfGq1hYn7DR21m3Z8f3Q5JxqwUtA&s"
-                alt="INS Kursura Image">
+                alt="Image">
         </div>
     </div>
 
@@ -187,46 +184,46 @@
 <script>
     // I will be creating a different pen with touch support but right // now I have no time for it due to school
 
-    const slider = document.querySelector(".items");
-const slides = document.querySelectorAll(".item");
-const button = document.querySelectorAll(".button");
+	const slider = document.querySelector(".items");
+		const slides = document.querySelectorAll(".item");
+		const button = document.querySelectorAll(".button");
 
-let current = 0;
-let prev = 3; // For 4 images, the previous image index will be 3 (the last one).
-let next = 1; // The next image index will start from 1 (the second one).
+		let current = 0;
+		let prev = 2; // For 3 images, the previous image index will be 2 (the last one).
+		let next = 1; // The next image index will start from 1 (the second one).
 
-for (let i = 0; i < button.length; i++) {
-	button[i].addEventListener("click", () => i == 0 ? gotoPrev() : gotoNext());
-}
+		for (let i = 0; i < button.length; i++) {
+			button[i].addEventListener("click", () => i == 0 ? gotoPrev() : gotoNext());
+		}
 
-const gotoPrev = () => current > 0 ? gotoNum(current - 1) : gotoNum(slides.length - 1);
+		const gotoPrev = () => current > 0 ? gotoNum(current - 1) : gotoNum(slides.length - 1);
 
-const gotoNext = () => current < 3 ? gotoNum(current + 1) : gotoNum(0);
+		const gotoNext = () => current < 2 ? gotoNum(current + 1) : gotoNum(0);
 
-const gotoNum = number => {
-	current = number;
-	prev = current - 1;
-	next = current + 1;
+		const gotoNum = number => {
+			current = number;
+			prev = current - 1;
+			next = current + 1;
 
-	for (let i = 0; i < slides.length; i++) {
-		slides[i].classList.remove("active");
-		slides[i].classList.remove("prev");
-		slides[i].classList.remove("next");
-	}
+			for (let i = 0; i < slides.length; i++) {
+				slides[i].classList.remove("active");
+				slides[i].classList.remove("prev");
+				slides[i].classList.remove("next");
+			}
 
-	// Wrap the indices around if they go out of bounds
-	if (next == 4) {
-		next = 0;
-	}
+			// Wrap the indices around if they go out of bounds
+			if (next == 3) {
+				next = 0;
+			}
 
-	if (prev == -1) {
-		prev = 3;
-	}
+			if (prev == -1) {
+				prev = 2;
+			}
 
-	slides[current].classList.add("active");
-	slides[prev].classList.add("prev");
-	slides[next].classList.add("next");
-}
+			slides[current].classList.add("active");
+			slides[prev].classList.add("prev");
+			slides[next].classList.add("next");
+		}
 </script>
 
 </html>

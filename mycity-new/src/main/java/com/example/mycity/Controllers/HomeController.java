@@ -775,7 +775,7 @@ public class HomeController {
       return "Tourism/Tirupathi/Alipiri";
    }
 
-   @GetMapping("/Tourism/Tirupathi/JapaliTeertham")
+   @GetMapping("/Tourism/Tirupathi/Japalitheertham")
    public String getJapalitheertham(){
     return "Tourism/Tirupathi/JapaliTeertham";
    }
@@ -922,6 +922,10 @@ public String getThonamWaterfalls() {
 @GetMapping("/Tourism/Parvathipuram/Tadikondawaterfalls")
 public String getSuryalankabeach() {
     return "/Tourism/Parvathipuram/Tadikondawaterfalls";
+}
+@GetMapping("/Tourism/Parvathipuram/ITDA")
+public String getITDA() {
+    return "/Tourism/Parvathipuram/ITDAPark";
 }
 
 /*probably used */

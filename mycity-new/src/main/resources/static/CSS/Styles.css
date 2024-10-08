@@ -25,6 +25,248 @@ body {
     width: 100% !important;
 }
 
+.alluri{
+    padding: 1px 0 0 0;
+    background-image:
+        url(https://upload.wikimedia.org/wikipedia/commons/d/de/Lambasinghi_on_a_cloudy_day.jpg);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    width: 100% !important;
+}
+ 
+.anakapalle{
+    padding: 1px 0 0 0;
+    background-image:
+        url(https://assets.thehansindia.com/h-upload/2022/04/03/1285078-a-view-of-visakhapatnam.webp);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    width: 100% !important;
+}
+ 
+.anantapur{
+    padding: 1px 0 0 0;
+    background-image:
+        url(https://upload.wikimedia.org/wikipedia/commons/c/c8/Anantapur_Clock_tower_at_night.jpg);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    width: 100% !important;
+}
+ 
+.annamayya{
+    padding: 1px 0 0 0;
+    background-image:
+        url(https://upload.wikimedia.org/wikipedia/commons/7/76/Saumyanatha_temple.JPG);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    width: 100% !important;
+}
+ 
+.bapatla{
+    padding: 1px 0 0 0;
+    background-image:
+        url(/img/bapatla.png);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    width: 100% !important;
+}
+ 
+.chittor{
+    padding: 1px 0 0 0;
+    background-image:
+        url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Galipgopuram_of_Kanipakam_temple_%28May_2019%29_8.jpg/1200px-Galipgopuram_of_Kanipakam_temple_%28May_2019%29_8.jpg);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    width: 100% !important;
+}
+ 
+.konaseema{
+    padding: 1px 0 0 0;
+    background-image:
+        url(https://upload.wikimedia.org/wikipedia/commons/0/0d/Draksharama_temple_entrance_02.JPG);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    width: 100% !important;
+}
+ 
+.east{
+    padding: 1px 0 0 0;
+    background-image:
+        url(https://live.staticflickr.com/5172/5525287776_39c22c1aca_b.jpg);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    width: 100% !important;
+}
+
+.eluru{
+    padding: 1px 0 0 0;
+    background-image:
+        url(https://www.hlimg.com/images/things2do/738X538/ttd_1523956441m2.jpg);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    width: 100% !important;
+}
+
+.guntur{
+    padding: 1px 0 0 0;
+    background-image:
+        url(https://dynamic-media-cdn.tripadvisor.com/media/photo-o/12/2d/a8/26/photo2jpg.jpg?w=1000&h=600&s=1);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    width: 100% !important;
+}
+
+.kakinada{
+    padding: 1px 0 0 0;
+    background-image:
+        url(https://d368ufu7xgcs86.cloudfront.net/24501-1583678127.jpg);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    width: 100% !important;
+}
+
+.kurnool{
+    padding: 1px 0 0 0;
+    background-image:
+        url(https://www.indiasinvitation.com/wp-content/uploads/2016/08/Kurnool-Tourism-and-Travel-Guide.jpg);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    width: 100% !important;
+}
+
+.nandyala{
+    padding: 1px 0 0 0;
+    background-image:
+        url(https://gumlet.assettype.com/creativegaga/2022-05/6bade60a-4c31-4b94-9e65-fd709491f278/Stepped_Temple_Nandyal_15.jpg?auto=format%2Ccompress);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    width: 100% !important;
+}
+
+.ntr{
+    padding: 1px 0 0 0;
+    background-image:
+        url(https://files.yappe.in/place/full/gandhi-hill-vijayawada-199008.webp);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    width: 100% !important;
+}
+
+.palnadu{
+    padding: 1px 0 0 0;
+    background-image:
+        url(https://th-i.thgim.com/public/incoming/by5vku/article66240478.ece/alternates/LANDSCAPE_1200/10215_8_12_2022_21_1_58_1_IMG_8083.JPG);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    width: 100% !important;
+}
+
+.parvathipuram{
+    padding: 1px 0 0 0;
+    background-image:
+        url(https://wikiwandv2-19431.kxcdn.com/_next/image?url=https:%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2Fa%2Fa7%2FKamalingeswara_Temple%252C_Gallavilli%252C_Andhra_Pradesh_-_01.jpg%2F1500px-Kamalingeswara_Temple%252C_Gallavilli%252C_Andhra_Pradesh_-_01.jpg&w=1200&q=50);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    width: 100% !important;
+}
+
+.prakasam{
+    padding: 1px 0 0 0;
+    background-image:
+        url(https://i.pinimg.com/originals/0f/f7/a0/0ff7a048472940e8d977b884cd64eb17.jpg);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    width: 100% !important;
+}
+
+.srikakulam{
+    padding: 1px 0 0 0;
+    background-image:
+        url(https://imgcld.yatra.com/ytimages/image/upload/v1469610027/Srikakulam_History.jpg);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    width: 100% !important;
+}
+
+.sripottisriramulu{
+    padding: 1px 0 0 0;
+    background-image:
+        url(https://raw.githubusercontent.com/sumitc91/data/master/askgif-blog/bdb0a42e-9287-4b22-87e0-f8f27cca6ec9_Kandaleru-Dam.jpg);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    width: 100% !important;
+}
+
+.srisathyasai{
+    padding: 1px 0 0 0;
+    background-image:
+        url(https://dynamic-media-cdn.tripadvisor.com/media/photo-o/10/e3/3a/8b/sri-sathya-sai.jpg?w=1200&h=1200&s=1);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    width: 100% !important;
+}
+
+.tirupathi{
+    padding: 1px 0 0 0;
+    background-image:
+        url(/img/tirupati.png);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    width: 100% !important;
+}
+
+.vzm{
+    padding: 1px 0 0 0;
+    background-image:
+        url(/img/vizianagaram.png);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    width: 100% !important;
+}
+
 .visa-body {
     padding: 1px 0 0 0;
     background-image: 
@@ -33,6 +275,39 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     min-height: 400px;
+    width: 100% !important;
+}
+
+.west{
+    padding: 1px 0 0 0;
+    background-image:
+        url(https://i1.wp.com/www.snapscue.com/wp-content/uploads/2020/07/Papikondalu-tour-015.jpg?fit=2048%2C1365&ssl=1);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    width: 100% !important;
+}
+
+.krishna{
+    padding: 1px 0 0 0;
+    background-image:
+	url(https://th.bing.com/th/id/R.1d8d2805264cb4fbb91babeb9b7d2f6e?rik=Cn4oJK3Sl8Yk0g&riu=http%3a%2f%2f1.bp.blogspot.com%2f-dWEKUkk-qL8%2fVjsG9GYgwTI%2fAAAAAAAARak%2fEJ_qlQ6HgEs%2fs1600%2fIMG_9039.JPG&ehk=EZIFi7V6Gv3W8TusthVjtl6ZxbtVuMJWPYktDKRJ6mw%3d&risl=&pid=ImgRaw&r=0);
+	    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
+    width: 100% !important;
+}
+
+.ysr{
+    padding: 1px 0 0 0;
+    background-image:
+        url(/img/ysr.jpg);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 600px;
     width: 100% !important;
 }
 
@@ -51,7 +326,7 @@ body {
 }
 
 header{
-    background-color: rgba(0, 0, 0, 0.616);
+    background-color: black;
     display: flex;
     flex-direction: row;
     height: 60px;
