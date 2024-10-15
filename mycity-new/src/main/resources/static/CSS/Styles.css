@@ -25,6 +25,17 @@ body {
     width: 100% !important;
 }
 
+.about {
+    padding: 1px 0 0 0;
+    background-image: 
+        url(/Img/about-bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 729px;
+    width: 100% !important;
+}
+
 .alluri{
     padding: 1px 0 0 0;
     background-image:
@@ -386,9 +397,9 @@ ul{
     padding: 10px 15px 10px 15px;
     border-radius: 15px;
     width: fixed;
-    border: 2px solid orange;
+    border: 2px solid #f5640a;
     outline: none;
-    background-color: orange;
+    background-color: #f5640a;
     cursor: pointer;
 
     a{
@@ -408,7 +419,23 @@ ul{
     text-transform: uppercase;
     letter-spacing: 0.1em;
     text-align: left;
-    color: orange;
+    color: #f5640a;
+}
+
+button.explore_button{
+    height: 50px;
+    width: 120px;
+    padding: 10px 10px 10px 10px;
+    background-color: whitesmoke;
+    border: none;
+    border-radius: 10px;
+
+    a{
+        text-decoration: none;
+        color: #f5640a;
+        font-size: .8rem;
+        font-weight: bold;
+    }
 }
 
 footer{
@@ -431,8 +458,13 @@ footer{
                 text-decoration: none;
                 color: whitesmoke;
 
+                
                 &:hover{
-                    color: beige;
+                    color: orange;
+                }
+            
+                &.active{
+                    color: orange;
                 }
             }
         }
@@ -614,7 +646,6 @@ footer{
     margin: 0 auto;
 }
 
-
 .section {
     background-color: whitesmoke;
     border-radius: 8px;
@@ -719,6 +750,213 @@ main-container {
     border-left:7px solid;
 border-image-source: linear-gradient(to bottom right,orange 0%,orange 30%,white 40%,white 100%);
 border-image-slice: 1;
+}
+
+/*This is for about*/
+.about_container {
+    width: 92%;
+    margin: 0 auto;
+}
+
+.about_container h1{
+    margin: 20px 0 20px 0;
+}
+
+.about_container h2{
+    margin: 20px 0 20px 0;
+}
+
+.about_text{
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    text-align: center;  
+}
+
+.two_grid_item{
+    display: flex;
+    flex-direction: row;
+    grid-template-columns: repeat(2, 1fr);
+    text-align: left;
+    align-items: center;
+    min-height: 200px;
+    margin: 40px 0 40px 0;
+}
+
+.two_grid_text{
+    font-size: 1rem;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    width: 80%;
+    color: #f5640a;
+}
+
+.textone{
+    margin: 0 10px 0 0;
+}
+
+.texttwo{
+    margin: 0 0 0 20px;
+}
+
+.two_grid_img img{
+    width: 100%;
+    height: 300px;
+}
+
+.grid_container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.grid_item{
+    height: 550px;
+    width: 100%;
+    margin: 40px 0 15px 0;
+    background-color: #f5640a;
+    border-radius: 20px;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.5); /* Adding shadow */
+}
+
+.card_img_container{
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+    margin: 25px 0 0 0;
+}
+
+.card_container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card_item{
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.6); /* Adding shadow */
+}
+
+.card_item img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+}
+
+/*This is for the Contact*/
+.contact{
+    display: flex;
+    flex-direction: row;
+    /* display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px; */
+}
+
+.form_container{
+    width: 60%;
+}
+
+form.contact_form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 200px;
+}
+
+input{
+    min-height: 70px;
+    width: 600px;
+    border: none;
+    outline: none;
+    padding: 20px 20px 20px 20px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    color: black; 
+    font-size: 1.0rem;
+    letter-spacing: 0.1rem;
+    opacity: 1;
+    margin: 20px 0 20px 0;
+}
+
+input::placeholder {
+    color: black; 
+    font-size: 1.0rem;
+    letter-spacing: 0.1rem;
+    opacity: 1;
+}
+
+textarea{
+    min-height: 180px;
+    width: 600px;
+    border: none;
+    outline: none;
+    padding: 20px 20px 20px 20px;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    color: black; 
+    font-size: 1.0rem;
+    letter-spacing: 0.1rem;
+    opacity: 1;
+    margin: 20px 0 20px 0;
+    resize: none;
+
+}
+
+textarea::placeholder {
+    color: black; /* Change the placeholder text color */
+    font-size: 1.0rem; /* Change the font size */
+    letter-spacing: 0.1rem;
+    opacity: 1;
+}
+
+button.contact_submit{
+    height: 60px;
+    width: 300px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    padding: 10px 10px 10px 10px;
+    background-color: #f5640a;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.details_container{
+    display: grid;
+    grid-template-rows: repeat(4, 90px);
+    width: 30%;
+    background-color: #f5640a;
+    margin-right: 30px;
+    text-align: center;
+    border-radius: 20px;
+}
+
+.details_container .address, .mail, .phone{
+    display: flex;
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr); */
+    flex-direction: row;
+    align-items: center;
+}
+
+.address_icon, .mail_icon, .phone_icon{
+    width: 40%;
+    align-items: center;
+}
+
+.address_text, .mail_text, .phone_text{
+    width: 60%;
+    align-items: center;
+}
+
+iframe{
+    border-radius: 20px;
 }
 
 /*From here the coe is relatedd to mobile view*/

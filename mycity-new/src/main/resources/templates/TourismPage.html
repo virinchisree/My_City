@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/CSS/Styles.css">
-    <title>Document</title>
+    <title>Tourism</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -168,7 +168,7 @@
 
     <!-- Header placed over the carousel -->
     <div class="body">
-        <div class="nav_header" id="myHeader">
+        <div class="nav_header" id="myHeader" hx-boost="true">
             <div class="mobile_header">
                 <svg width="32px" height="32px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg"
                     transform="rotate(0)">
@@ -180,12 +180,12 @@
                     </g>
                 </svg>
             </div>
-            <header id="header">
+            <header id="header" hx-boost="true">
                 <div class="logo_placeholder">
                     <img src="/img/logo.jpg" alt="logo">
                 </div>
                 <div class="nav_links_placeholder">
-                    <ul class="nav_links" hx-boost="true">
+                    <ul class="nav_links">
                         <li class="nav_link"><a href="/"><span>Home</span></a></li>
                         <li class="nav_link"><a href="/entertainment"><span>Entertainment</span></a></li>
                         <li class="nav_link"><a href="/shopping"><span>Shopping</span></a></li>
@@ -557,7 +557,7 @@
     </div>
 
     <footer>
-        <div class="footer_nav-links_placeholder">
+        <div class="footer_nav-links_placeholder" hx-boost="true">
             <ul class="footer_nav-links">
                 <li class="footer_nav-link"><a href="/about">About</a></li>
                 <li class="footer_nav-link"><a href="/contact">Contact</a></li>

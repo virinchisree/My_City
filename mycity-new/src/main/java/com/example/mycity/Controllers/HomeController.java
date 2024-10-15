@@ -942,6 +942,15 @@ public String getITDAPark() {
     return "/Tourism/Parvathipuram/ITDAPark";
 }
 
+@GetMapping("/about")
+public String About() {
+    return "About";
+}
+
+@GetMapping("/contact")
+public String Contact() {
+    return "Contact";
+}
 
 
     
