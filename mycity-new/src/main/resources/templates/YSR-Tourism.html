@@ -8,11 +8,14 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>YSR-Kadapa-Tourism</title>
 	<link rel="stylesheet" href="/CSS/Styles.css">
+	<script src="https://unpkg.com/htmx.org@2.0.3" integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq" crossorigin="anonymous"></script>
+
+
 </head>
 
 <body>
 	<div class="ysr">
-		<div class="nav_header" id="myHeader">
+		<div class="nav_header" id="myHeader" hx-boost="true">
 			<header>
 				<div class="logo_placeholder">
 					<img src="/img/logo.jpg" alt="logo" width="80px" height="55px">
@@ -77,20 +80,7 @@
 					</div>
 				</div>
 			</a>
-			<!-- Card 4 -->
-			<a th:href="@{/Tourism/YSR/BelumCaves}" class="card-link" style="text-decoration: none;">
-				<div class="card">
-					<img src="/Img/belum4.jpeg" alt="Destination Image">
-					<div class="card-content">
-						<div class="card-title">Belum Caves</div>
-						<div class="card-subtitle">Lorem ipsum dolor sit amet</div>
-						<div class="stars">★★★★★</div>
-						<div class="reviews">(13 reviews)</div>
-					</div>
-				</div>
-			</a>
-
-			<!--To Here-->
+						
 			<!-- Card 5 -->
 			<a th:href="@{/Tourism/YSR/BramhamGariMatam}" class="card-link" style="text-decoration: none;">
 				<div class="card">
