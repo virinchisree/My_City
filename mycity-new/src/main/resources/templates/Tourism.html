@@ -8,78 +8,122 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>MyCity</title>
     <link rel="stylesheet" href="/CSS/Styles.css">
-    <Script src="script.js"></Script>
+    <script src="https://unpkg.com/htmx.org@2.0.3"
+        integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq"
+        crossorigin="anonymous"></script>
 </head>
 
-<body>
-    <div class="body">
-        <div class="nav_header" id="myHeader">
-            <header>
-                <div class="logo_placeholder">
-                    <h3>logo</h3>
-                </div>
-                <div class="nav_links_placeholder">
-                    <ul class="nav_links">
-                        <li class="nav_link"><a href="/"><span>Home</span></a></li>
-                        <li class="nav_link"><a href="/entertainment"><span>Entertainment</span></a></li>
-                        <li class="nav_link"><a href=""><span>Shopping</span></a></li>
-                        <li class="nav_link active"><a href="/tourism"><span>Tourism</span></a></li>
-                        <li class="nav_link"><a href=""><span>Pay Bills</span></a></li>
-                        <li class="nav_link"><a href=""><span>Hotels</span></a></li>
-                    </ul>
-                </div>
-                <div class="login-button_placeholder">
-                    <button class="login_button"><a href="/register" class="signup-btn">Sign Up</a></button>
-                </div>
-            </header>
+<body hx-boost="true">
+    <div class="nav_header" id="myHeader">
+        <div class="mobile_header">
+            <svg width="32px" height="32px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg"
+                transform="rotate(0)">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                    <path d="M4 6H20M4 12H20M4 18H20" stroke="white" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                </g>
+            </svg>
         </div>
-        <div class="text_block">
-            <h1 class="text-style_border">Explore</h1>
-            <h1 class="text-style_border">Districts</h1>
+        <header id="header" hx-boost="true">
+            <div class="logo_placeholder">
+                <img src="/img/logo.jpg" alt="logo" />
+            </div>
+            <div class="nav_links_placeholder">
+                <ul class="nav_links">
+                    <li class="nav_link">
+                        <a href="/"><span>Home</span></a>
+                    </li>
+                    <li class="nav_link">
+                        <a href="/entertainment"><span>Entertainment</span></a>
+                    </li>
+                    <li class="nav_link">
+                        <a href="/shopping"><span>Shopping</span></a>
+                    </li>
+                    <li class="nav_link active">
+                        <a href="/tourism"><span>Tourism</span></a>
+                    </li>
+                    <li class="nav_link">
+                        <a href="/paybills"><span>Pay Bills</span></a>
+                    </li>
+                    <li class="nav_link">
+                        <a href="/hotels"><span>Hotels</span></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="login-button_placeholder">
+                <button class="login_button">
+                    <a href="/register" class="signup-btn">Sign Up</a>
+                </button>
+            </div>
+        </header>
+    </div>
+    <div class="video_placeholder">
+        <video src="https://videos.pexels.com/video-files/4193130/4193130-sd_640_360_24fps.mp4" autoplay muted controls
+            loop></video>
+    </div>
+    <div class="cards_section">
+        <div class="hot_card">
+            <img src="/img/tirupati.png" alt="Tirupati">
+            <div class="hot_card-title">Tirupati</div>
+        </div>
+        <div class="hot_card">
+            <img src="/img/vizianagaram.png" alt="Vizianagaram">
+            <div class="hot_card-title">Vizianagaram</div>
+        </div>
+        <div class="hot_card">
+            <img src="/img/ambedkar_Konaseema.png" alt="Konaseema">
+            <div class="hot_card-title">Konaseema</div>
+        </div>
+        <div class="hot_card">
+            <img src="/img/visakhapatnam.jpg" alt="Visakhapatnam">
+            <div class="hot_card-title">Visakhapatnam</div>
+        </div>
+        <div class="hot_card">
+            <img src="/img/kurnool.png" alt="Kurnool">
+            <div class="hot_card-title">Kurnool</div>
         </div>
     </div>
     <div class="container">
-        <div class="grid-container">
+        <div class="page_header">
+            <h1 class="explore">Explore Destinations</h1>
+        </div>
+        <div class="grid-container tourism-grid">
             <!-- Card 1 -->
-            <div class="card">
-                <img src="https://visakhatourism.com/wp-content/uploads/2014/07/vizag-araku-tour.webp"
-                    alt="Destination Image">
-                <div class="card-content">
-                    <div class="card-title">Alluri Sitharama Raju</div>
-                    <div class="card-subtitle">Lorem ipsum dolor sit amet</div>
-                    <div class="stars">★★★★★</div>
-                    <div class="reviews">(13 reviews)</div>
+            <a th:href="@{/AlluriSitharamaRaju-Tourism}" style="text-decoration: none;">
+                <div class="card">
+                    <img src="/Img/Alluri Sitharama raju/allurisitharamaraju.webp"
+                        alt="Destination Image">
+                    <div class="card-content">
+                        <div class="card-title">Alluri Sitharama Raju</div>
+                    </div>
                 </div>
-            </div>
-            <!-- Card 2 -->
-            <div class="card">
-                <img src="/img/anakapalli.png" alt="Destination Image">
-                <div class="card-content">
-                    <div class="card-title">Anakapalli</div>
-                    <div class="card-subtitle">Lorem ipsum dolor sit amet</div>
-                    <div class="stars">★★★★☆</div>
-                    <div class="reviews">(13 reviews)</div>
+            </a>
+            <a th:href="@{/Anakapalle-Tourism}" style="text-decoration: none;">
+                <div class="card">
+                    <img src="/img/anakapalli.png" alt="Destination Image">
+                    <div class="card-content">
+                        <div class="card-title">Anakapalli</div>
+                    </div>
                 </div>
-            </div>
+            </a>
             <!-- Card 3 -->
-            <div class="card">
-                <img src="/img/ananthapur.png" alt="Destination Image">
-                <div class="card-content">
-                    <div class="card-title">Anantapur</div>
-                    <div class="card-subtitle">Lorem ipsum dolor sit amet</div>
-                    <div class="stars">★★★☆☆</div>
-                    <div class="reviews">(13 reviews)</div>
+            <a th:href="@{/Ananthapuramu-Tourism}" style="text-decoration: none;">
+                <div class="card">
+                    <img src="/Img/Ananthapuramu/VeeraBhadraTemple/VeeraBhadraTemple-1.jpg" alt="Destination Image">
+                    <div class="card-content">
+                        <div class="card-title">Ananthapuramu</div>
+
+                    </div>
                 </div>
-            </div>
+            </a>
             <!-- Card 4 -->
             <a th:href="@{/Annamayya-Tourism}" style="text-decoration: none;">
                 <div class="card">
                     <img src="/img/Annamayya1.png" alt="Destination Image">
                     <div class="card-content">
                         <div class="card-title">Annamayya</div>
-                        <div class="card-subtitle">Lorem ipsum dolor sit amet</div>
-                        <div class="stars">★★★★★</div>
-                        <div class="reviews">(13 reviews)</div>
                     </div>
                 </div>
             </a>
@@ -89,9 +133,6 @@
                     <img src="/img/bapatla.png" alt="Destination Image">
                     <div class="card-content">
                         <div class="card-title">Bapatla</div>
-                        <div class="card-subtitle">Lorem ipsum dolor sit amet</div>
-                        <div class="stars">★★★★☆</div>
-                        <div class="reviews">(13 reviews)</div>
                     </div>
                 </div>
             </a>
@@ -101,9 +142,6 @@
                     <img src="/img/chittor.png" alt="Destination Image">
                     <div class="card-content">
                         <div class="card-title">Chittoor</div>
-                        <div class="card-subtitle">Lorem ipsum dolor sit amet</div>
-                        <div class="stars">★★★☆☆</div>
-                        <div class="reviews">(13 reviews)</div>
                     </div>
                 </div>
             </a>
@@ -113,21 +151,16 @@
                     <img src="/img/ambedkar_Konaseema.png" alt="Destination Image">
                     <div class="card-content">
                         <div class="card-title">Dr. B.R. Ambedkar Konaseema</div>
-                        <div class="card-subtitle">Lorem ipsum dolor sit amet</div>
-                        <div class="stars">★★★☆☆</div>
-                        <div class="reviews">(13 reviews)</div>
                     </div>
                 </div>
             </a>
             <!-- Card 8 -->
-            <a th:href="@{/East-Godavari-Tourism}" style="text-decoration: none;">
+            <a th:href="@{/EastGodavari-Tourism}" style="text-decoration: none;">
                 <div class="card">
                     <img src="/img/east-godavari.png" alt="Destination Image">
                     <div class="card-content">
                         <div class="card-title">East Godavari</div>
-                        <div class="card-subtitle">Lorem ipsum dolor sit amet</div>
-                        <div class="stars">★★★☆☆</div>
-                        <div class="reviews">(13 reviews)</div>
+
                     </div>
                 </div>
             </a>
@@ -137,9 +170,9 @@
                     <img src="/img/eluru.jpg" alt="Destination Image">
                     <div class="card-content">
                         <div class="card-title">Eluru</div>
-                        <div class="card-subtitle">Lorem ipsum dolor sit amet</div>
+                        <!-- <div class="card-subtitle">Lorem ipsum dolor sit amet</div>
                         <div class="stars">★★★☆☆</div>
-                        <div class="reviews">(13 reviews)</div>
+                        <div class="reviews">(13 reviews)</div> -->
                     </div>
                 </div>
             </a>
@@ -149,9 +182,9 @@
                     <img src="/img/guntur.png" alt="Destination Image">
                     <div class="card-content">
                         <div class="card-title">Guntur</div>
-                        <div class="card-subtitle">Lorem ipsum dolor sit amet</div>
-                        <div class="stars">★★★☆☆</div>
-                        <div class="reviews">(13 reviews)</div>
+                        <!-- <div class="card-subtitle">Lorem ipsum dolor sit amet</div> -->
+                        <!-- <div class="stars">★★★☆☆</div> -->
+                        <!-- <div class="reviews">(13 reviews)</div> -->
                     </div>
                 </div>
             </a>
@@ -161,9 +194,9 @@
                     <img src="/img/kakinada.png" alt="Destination Image">
                     <div class="card-content">
                         <div class="card-title">Kakinada</div>
-                        <div class="card-subtitle">Lorem ipsum dolor sit amet</div>
-                        <div class="stars">★★★☆☆</div>
-                        <div class="reviews">(13 reviews)</div>
+                        <!-- <div class="card-subtitle">Lorem ipsum dolor sit amet</div> -->
+                        <!-- <div class="stars">★★★☆☆</div> -->
+                        <!-- <div class="reviews">(13 reviews)</div> -->
                     </div>
                 </div>
             </a>
@@ -173,9 +206,9 @@
                     <img src="/img/krishna.jpg" alt="Destination Image">
                     <div class="card-content">
                         <div class="card-title">Krishna</div>
-                        <div class="card-subtitle">Lorem ipsum dolor sit amet</div>
-                        <div class="stars">★★★☆☆</div>
-                        <div class="reviews">(13 reviews)</div>
+                        <!-- <div class="card-subtitle">Lorem ipsum dolor sit amet</div> -->
+                        <!-- <div class="stars">★★★☆☆</div> -->
+                        <!-- <div class="reviews">(13 reviews)</div> -->
                     </div>
                 </div>
             </a>
@@ -185,57 +218,59 @@
                     <img src="/img/kurnool.png" alt="Destination Image">
                     <div class="card-content">
                         <div class="card-title">Kurnool</div>
-                        <div class="card-subtitle">Lorem ipsum dolor sit amet</div>
-                        <div class="stars">★★★☆☆</div>
-                        <div class="reviews">(13 reviews)</div>
+                        <!-- <div class="card-subtitle">Lorem ipsum dolor sit amet</div> -->
+                        <!-- <div class="stars">★★★☆☆</div> -->
+                        <!-- <div class="reviews">(13 reviews)</div> -->
                     </div>
                 </div>
             </a>
             <!-- Card 14 -->
             <a th:href="@{/Nandyala-Tourism}" style="text-decoration: none;">
                 <div class="card">
-                    <img src="/Img/rollapadu6.jpeg" alt="Destination Image">
+                    <img src="/img/nandyal.png" alt="Destination Image">
                     <div class="card-content">
                         <div class="card-title">Nandyal</div>
-                        <div class="card-subtitle">Lorem ipsum dolor sit amet</div>
-                        <div class="stars">★★★☆☆</div>
-                        <div class="reviews">(13 reviews)</div>
+                        <!-- <div class="card-subtitle">Lorem ipsum dolor sit amet</div> -->
+                        <!-- <div class="stars">★★★☆☆</div> -->
+                        <!-- <div class="reviews">(13 reviews)</div> -->
                     </div>
                 </div>
             </a>
             <!-- Card 15 -->
             <a th:href="@{/Ntr-Tourism}" style="text-decoration: none;">
                 <div class="card">
-                    <img src="https://via.placeholder.com/300" alt="Destination Image">
+                    <img src="https://files.yappe.in/place/full/gandhi-hill-vijayawada-199008.webp"
+                        alt="Destination Image">
                     <div class="card-content">
                         <div class="card-title">Ntr</div>
-                        <div class="card-subtitle">Lorem ipsum dolor sit amet</div>
-                        <div class="stars">★★★☆☆</div>
-                        <div class="reviews">(13 reviews)</div>
+                        <!-- <div class="card-subtitle">Lorem ipsum dolor sit amet</div> -->
+                        <!-- <div class="stars">★★★☆☆</div> -->
+                        <!-- <div class="reviews">(13 reviews)</div> -->
                     </div>
                 </div>
             </a>
             <!-- Card 16 -->
             <a th:href="@{/Palnadu-Tourism}" style="text-decoration: none;">
                 <div class="card">
-                    <img src="/img/palnadu.png" alt="Destination Image">
+                    <img src="/Img/palnadu.png" alt="Destination Image">
                     <div class="card-content">
                         <div class="card-title">Palnadu</div>
-                        <div class="card-subtitle">Lorem ipsum dolor sit amet</div>
-                        <div class="stars">★★★☆☆</div>
-                        <div class="reviews">(13 reviews)</div>
+                        <!-- <div class="card-subtitle">Lorem ipsum dolor sit amet</div> -->
+                        <!-- <div class="stars">★★★☆☆</div> -->
+                        <!-- <div class="reviews">(13 reviews)</div> -->
                     </div>
                 </div>
             </a>
             <!-- Card 17 -->
-            <a th:href="@{/Parvathipuram-Manyam-Tourism}" style="text-decoration: none;">
+            <a th:href="@{/Parvathipuram-Tourism}" style="text-decoration: none;">
                 <div class="card">
-                    <img src="https://via.placeholder.com/300" alt="Destination Image">
+                    <img src="https://www.deccanchronicle.com/h-upload/2024/09/22/500x300_1844354-22vzdc05.webp"
+                        alt="Destination Image">
                     <div class="card-content">
                         <div class="card-title">Parvathipuram Manyam</div>
-                        <div class="card-subtitle">Lorem ipsum dolor sit amet</div>
-                        <div class="stars">★★★☆☆</div>
-                        <div class="reviews">(13 reviews)</div>
+                        <!-- <div class="card-subtitle">Lorem ipsum dolor sit amet</div> -->
+                        <!-- <div class="stars">★★★☆☆</div> -->
+                        <!-- <div class="reviews">(13 reviews)</div> -->
                     </div>
                 </div>
             </a>
@@ -245,9 +280,9 @@
                     <img src="/img/BhairavaKona3.png" alt="Destination Image">
                     <div class="card-content">
                         <div class="card-title">Prakasam</div>
-                        <div class="card-subtitle">Lorem ipsum dolor sit amet</div>
-                        <div class="stars">★★★☆☆</div>
-                        <div class="reviews">(13 reviews)</div>
+                        <!-- <div class="card-subtitle">Lorem ipsum dolor sit amet</div> -->
+                        <!-- <div class="stars">★★★☆☆</div> -->
+                        <!-- <div class="reviews">(13 reviews)</div> -->
                     </div>
                 </div>
             </a>
@@ -257,9 +292,9 @@
                     <img src="/img/Jonnavada-Kamakshi-Temple3.webp" alt="Destination Image">
                     <div class="card-content">
                         <div class="card-title">Sri Potti Sriramulu Nellore</div>
-                        <div class="card-subtitle">Lorem ipsum dolor sit amet</div>
-                        <div class="stars">★★★☆☆</div>
-                        <div class="reviews">(13 reviews)</div>
+                        <!-- <div class="card-subtitle">Lorem ipsum dolor sit amet</div> -->
+                        <!-- <div class="stars">★★★☆☆</div> -->
+                        <!-- <div class="reviews">(13 reviews)</div> -->
                     </div>
                 </div>
             </a>
@@ -269,9 +304,9 @@
                     <img src="/img/lepakshi3.png" alt="Destination Image">
                     <div class="card-content">
                         <div class="card-title">Sri Sathya Sai</div>
-                        <div class="card-subtitle">Lorem ipsum dolor sit amet</div>
-                        <div class="stars">★★★☆☆</div>
-                        <div class="reviews">(13 reviews)</div>
+                        <!-- <div class="card-subtitle">Lorem ipsum dolor sit amet</div> -->
+                        <!-- <div class="stars">★★★☆☆</div> -->
+                        <!-- <div class="reviews">(13 reviews)</div> -->
                     </div>
                 </div>
             </a>
@@ -281,8 +316,8 @@
                     <img src="/img/srikakulam.png" alt="Destination Image">
                     <div class="card-content">
                         <div class="card-title">Srikakulam</div>
-                        <div class="card-subtitle">Lorem ipsum dolor sit amet</div>
-                        <div class="stars">★★★☆☆</div>
+                        <!-- <div class="card-subtitle">Lorem ipsum dolor sit amet</div> -->
+                        <!-- <div class="stars">★★★☆☆</div> -->
                         <!--<div class="reviews">(13 reviews)</div>-->
                     </div>
                 </div>
@@ -292,10 +327,10 @@
                 <div class="card">
                     <img src="/img/tirupati.png" alt="Destination Image">
                     <div class="card-content">
-                        <div class="card-title">Tirupati</div>
-                        <div class="card-subtitle">Lorem ipsum dolor sit amet</div>
-                        <!-- <div class="stars">★★★☆☆</div>-->
-                        <div class="reviews">(13 reviews)</div>
+                        <div class="card-title">Tirupathi</div>
+                        <!-- <div class="card-subtitle">Lorem ipsum dolor sit amet</div> -->
+                        <!-- <div class="stars">★★★☆☆</div> -->
+                        <!-- <div class="reviews">(13 reviews)</div> -->
                     </div>
                 </div>
             </a>
@@ -305,9 +340,9 @@
                     <img src="/img/visakhapatnam.jpg" alt="Destination Image">
                     <div class="card-content">
                         <div class="card-title">Visakhapatnam</div>
-                        <div class="card-subtitle">Lorem ipsum dolor sit amet</div>
+                        <!-- <div class="card-subtitle">Lorem ipsum dolor sit amet</div> -->
                         <!-- <div class="stars">★★★☆☆</div>-->
-                        <div class="reviews">(13 reviews)</div>
+                        <!-- <div class="reviews">(13 reviews)</div> -->
                     </div>
                 </div>
             </a>
@@ -317,9 +352,9 @@
                     <img src="/img/vizianagaram.png" alt="Destination Image">
                     <div class="card-content">
                         <div class="card-title">Vizianagaram</div>
-                        <div class="card-subtitle">Lorem ipsum dolor sit amet</div>
+                        <!-- <div class="card-subtitle">Lorem ipsum dolor sit amet</div> -->
                         <!-- <div class="stars">★★★☆☆</div>-->
-                        <div class="reviews">(13 reviews)</div>
+                        <!-- <div class="reviews">(13 reviews)</div> -->
                     </div>
                 </div>
             </a>
@@ -329,9 +364,9 @@
                     <img src="/img/west godavari1.png" alt="Destination Image">
                     <div class="card-content">
                         <div class="card-title">West Godavari</div>
-                        <div class="card-subtitle">Lorem ipsum dolor sit amet</div>
-                        <div class="stars">★★★☆☆</div>
-                        <div class="reviews">(13 reviews)</div>
+                        <!-- <div class="card-subtitle">Lorem ipsum dolor sit amet</div> -->
+                        <!-- <div class="stars">★★★☆☆</div> -->
+                        <!-- <div class="reviews">(13 reviews)</div> -->
                     </div>
                 </div>
             </a>
@@ -341,12 +376,66 @@
                     <img src="/img/ysr.jpg" alt="Destination Image">
                     <div class="card-content">
                         <div class="card-title"> Y.S.R. Kadapa</div>
-                        <div class="card-subtitle">Lorem ipsum dolor sit amet</div>
-                        <div class="stars">★★★☆☆</div>
-                        <div class="reviews">(13 reviews)</div>
+                        <!-- <div class="card-subtitle">Lorem ipsum dolor sit amet</div> -->
+                        <!-- <div class="stars">★★★☆☆</div> -->
+                        <!-- <div class="reviews">(13 reviews)</div> -->
                     </div>
                 </div>
             </a>
+        </div>
+    </div>
+    <div class="gallery_container">
+        <div class="city-content">
+            <p class="city-title">Welcome To Mycity</p>
+            <p class="city-para">Explore Our Gallery</p>
+        </div>
+        <div class="city-explore">
+            <div class="city-1">
+                <img src="images/Rectangle 22.png" alt="">
+                <img src="images/Rectangle 23.png" alt="">
+            </div>
+            <div class="city-2">
+                <img src="images/Rectangle 24.png" alt="">
+                <div class="city-2-inner">
+                    <img src="images/Rectangle 25.png" alt="">
+                    <img src="images/Rectangle 26.png" alt="">
+                </div>
+            </div>
+            <div class="city-3">
+                <div class="city-3-1">
+                    <img src="images/Rectangle 29.png" alt="">
+                    <img src="images/Rectangle 30.png" alt="">
+                </div>
+                <div class="city-3-2">
+                    <img src="images/Rectangle 27.png" alt="">
+                    <img src="images/Rectangle 28.png" alt="">
+                </div>
+            </div>
+            <div class="city-4">
+                <img src="images/Rectangle 31.png" alt="">
+            </div>
+            <div class="city-5">
+                <img src="images/Rectangle 32.png" alt="">
+                <img src="images/Rectangle 41.png" alt="">
+            </div>
+            <div class="city-2">
+                <img src="images/Rectangle 33.png" alt="">
+                <div class="city-2-inner">
+                    <img src="images/Rectangle 39.png" alt="">
+                    <img src="images/Rectangle 40.png" alt="">
+                </div>
+            </div>
+            <div class="city-1">
+                <img src="images/Rectangle 36.png" alt="">
+                <img src="images/Rectangle 34.png" alt="">
+            </div>
+            <div class="city-6">
+                <img src="images/Rectangle 37.png" alt="">
+                <img src="images/Rectangle 35.png" alt="">
+            </div>
+            <div class="city-4">
+                <img src="images/Rectangle 38.png" alt="">
+            </div>
         </div>
     </div>
     <footer>
@@ -393,6 +482,7 @@
             <p class="copy-rights">Copyright © 2024 MyCity. All rights reserved.</p>
         </div>
     </footer>
+    <Script src="/JS/Script.js"></Script>
 </body>
 
 </html>

@@ -31,7 +31,7 @@ public class HomeController {
     
     @GetMapping("/tourism")
     public String Tourism() {
-        return "TourismPage";
+        return "Tourism";
     }
     
     @GetMapping("signup")

@@ -7,7 +7,9 @@
     <title>Kailasakona Waterfalls</title>
     <link rel="stylesheet" href="/CSS/Styles.css">
     <script src="https://hammerjs.github.io/dist/hammer.js"></script>
-    <script src="https://unpkg.com/htmx.org@2.0.3" integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/htmx.org@2.0.3"
+        integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq"
+        crossorigin="anonymous"></script>
 
 </head>
 
@@ -86,11 +88,16 @@
             <img src="/Img/kailas5.jpeg" alt="Image">
             <div class="text-section">
                 <h2>About</h2>
-                <p>INS Kursura, the underwater behemoth of the Indian Navy, is located on the golden sands of RK Beach,
-                    from which the now prestigious Submarine Museum emanated. This project was undertaken by the
-                    Eastern Naval Command in collaboration with the National Ship Design and Research Center.
-                    Recognized by the Navy as a War Memorial, the museum had a project cost of Rs. 5.5 crores.
-                    It is the first of its kind in Asia and ranks second in the world.
+                <p>Kailasakona Waterfalls is a picturesque natural attraction located in the Chittoor district of Andhra
+                    Pradesh, India. Nestled amidst lush green hills, this waterfall is known for its serene beauty and
+                    tranquil environment. The falls cascade down from a height of approximately 40 feet, creating a
+                    stunning sight as the water plunges into a crystal-clear pool below.Surrounded by dense forests and
+                    rocky terrain, the area offers breathtaking views, making it a popular spot for nature lovers and
+                    photographers.The waterfalls are easily accessible by road, with well-maintained pathways leading to
+                    the site. It is located about 40 kilometers from Tirupati, making it a convenient day trip for
+                    visitors.The name "Kailasakona" is derived from the nearby temple dedicated to Lord Shiva, which
+                    adds a spiritual dimension to the visit. The area is often frequented by pilgrims seeking blessings
+                    at the temple.
                 </p>
             </div>
         </div>
@@ -98,13 +105,17 @@
         <div class="section">
             <div class="text-section">
                 <h2>History</h2>
-                <p>Tirumala, a town situated in the Tirupati district of Andhra Pradesh, is home to the Tirumala
-                    Venkateswara Temple,
-                    one of the most revered pilgrimage sites in India. The history of Tirumala dates back several
-                    centuries,
-                    with its origins linked to ancient Hindu texts and legends.
-                    According to folklore, the temple is dedicated to Lord Venkateswara, an incarnation of Lord Vishnu,
-                    who is believed to have appeared here to save mankind from the troubles of the Kali Yuga.
+                <p>The history of Kailasakona Waterfalls is intertwined with local legends and cultural significance.
+                    The waterfall is believed to have been named after the mythical Mount Kailash, the abode of Lord
+                    Shiva. According to local folklore, it is said that Lord Shiva himself visited this site, making it
+                    a sacred place for devotees.The region is steeped in mythology, with stories of divine presence and
+                    spiritual significance. The nearby temple dedicated to Lord Shiva attracts pilgrims from various
+                    parts of the state.Over the years, Kailasakona has gained popularity as a tourist destination,
+                    leading to the development of infrastructure and facilities to accommodate visitors. The government
+                    has taken steps to promote eco-tourism in the area, ensuring that the natural beauty is preserved
+                    while providing amenities for tourists.Efforts have been made to maintain the ecological balance of
+                    the region, with initiatives to promote sustainable tourism and protect the natural habitat
+                    surrounding the waterfalls.
                 </p>
             </div>
             <img src="/Img/kailas4.jpeg" alt="Image">
@@ -114,7 +125,7 @@
 
     <div class="main-container">
         <div class="heading">
-           
+
         </div>
         <div class="use-timings">
             <h2>Opening and Closing Timings</h2>
@@ -130,7 +141,10 @@
     </div>
 
     <div class="map_container">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248408.83412614968!2d79.34469968671874!3d13.388282599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4d58b5298afe09%3A0x4f36e6b3da303014!2sKailasa%20Kona%20falls!5e0!3m2!1sen!2sin!4v1728280091068!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d248408.83412614968!2d79.34469968671874!3d13.388282599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a4d58b5298afe09%3A0x4f36e6b3da303014!2sKailasa%20Kona%20falls!5e0!3m2!1sen!2sin!4v1728280091068!5m2!1sen!2sin"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
     <footer>
         <div class="footer_nav-links_placeholder">
@@ -179,45 +193,45 @@
 </body>
 <script>
     const slider = document.querySelector(".items");
-const slides = document.querySelectorAll(".item");
-const button = document.querySelectorAll(".button");
+    const slides = document.querySelectorAll(".item");
+    const button = document.querySelectorAll(".button");
 
-let current = 0;
-let prev = 3; // For 4 images, the previous image index will be 3 (the last one).
-let next = 1; // The next image index will start from 1 (the second one).
+    let current = 0;
+    let prev = 3; // For 4 images, the previous image index will be 3 (the last one).
+    let next = 1; // The next image index will start from 1 (the second one).
 
-for (let i = 0; i < button.length; i++) {
-	button[i].addEventListener("click", () => i == 0 ? gotoPrev() : gotoNext());
-}
+    for (let i = 0; i < button.length; i++) {
+        button[i].addEventListener("click", () => i == 0 ? gotoPrev() : gotoNext());
+    }
 
-const gotoPrev = () => current > 0 ? gotoNum(current - 1) : gotoNum(slides.length - 1);
+    const gotoPrev = () => current > 0 ? gotoNum(current - 1) : gotoNum(slides.length - 1);
 
-const gotoNext = () => current < 3 ? gotoNum(current + 1) : gotoNum(0);
+    const gotoNext = () => current < 3 ? gotoNum(current + 1) : gotoNum(0);
 
-const gotoNum = number => {
-	current = number;
-	prev = current - 1;
-	next = current + 1;
+    const gotoNum = number => {
+        current = number;
+        prev = current - 1;
+        next = current + 1;
 
-	for (let i = 0; i < slides.length; i++) {
-		slides[i].classList.remove("active");
-		slides[i].classList.remove("prev");
-		slides[i].classList.remove("next");
-	}
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].classList.remove("active");
+            slides[i].classList.remove("prev");
+            slides[i].classList.remove("next");
+        }
 
-	// Wrap the indices around if they go out of bounds
-	if (next == 4) {
-		next = 0;
-	}
+        // Wrap the indices around if they go out of bounds
+        if (next == 4) {
+            next = 0;
+        }
 
-	if (prev == -1) {
-		prev = 3;
-	}
+        if (prev == -1) {
+            prev = 3;
+        }
 
-	slides[current].classList.add("active");
-	slides[prev].classList.add("prev");
-	slides[next].classList.add("next");
-}
+        slides[current].classList.add("active");
+        slides[prev].classList.add("prev");
+        slides[next].classList.add("next");
+    }
 </script>
 
 
