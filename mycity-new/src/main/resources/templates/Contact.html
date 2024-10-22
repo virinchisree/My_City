@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
@@ -47,7 +47,7 @@
         </div>
         <div class="text_block contact">
             <div class="form_container">
-                <form action="" class="contact_form">
+                <form th:action="@{/submitContactForm}" method="post" class="contact_form">
                     <div class="form-group">
                         <input type="text" data-id="name" placeholder="Enter Your Name" id="name" name="name" required>
                     </div>
@@ -177,6 +177,10 @@
         <div class="footer_copy-rights_placeholder">
             <p class="copy-rights">Copyright © 2024 MyCity. All rights reserved.</p>
         </div>
+        <div th:if="${successMessage}">
+            <p style="color:green" th:text="${successMessage}"></p>
+        </div>
+        
     </footer>
 </body>
 
