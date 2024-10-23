@@ -291,6 +291,10 @@ public class HomeController {
     public String getAttirala(){
         return "Tourism/Annamayya/Attirala";
     }
+    @GetMapping("/Tourism/Annamayya/Tarigonda")
+    public String getTarikonda(){
+        return "Tourism/Annamayya/Tarigonda";
+    }
     @GetMapping("/Tourism/Annamayya/Horsely")
     public String getHorsely(){
         return "Tourism/Annamayya/Horsely";
