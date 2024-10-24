@@ -26,7 +26,7 @@
                 </g>
             </svg>
         </div>
-        <header id="header" hx-boost="true">
+        <header id="header">
             <div class="logo_placeholder">
                 <img src="/img/logo.jpg" alt="logo" />
             </div>
@@ -492,8 +492,7 @@
             <p class="copy-rights">Copyright © 2024 MyCity. All rights reserved.</p>
         </div>
     </footer>
-<<<<<<< HEAD
-    <Script>
+    <!-- <Script>
         document.body.addEventListener('htmx:afterSwap', function (event) {
     const cityExplore = document.querySelector('.city-explore');
 
@@ -521,10 +520,14 @@
     let scrollInterval = setInterval(autoScroll, 50);
 });
 
-    </Script>
-=======
+    </Script> -->
     <script>
-        document.body.addEventListener('htmx:afterSwap', function (event) {
+        document.body.addEventListener('htmx:afterSwap', startAutoScroll);
+
+        // Start scrolling when the page loads
+        window.addEventListener('load', startAutoScroll);
+
+        function startAutoScroll() {
             const cityExplore = document.querySelector('.city-explore');
 
             if (!cityExplore) {
@@ -547,9 +550,18 @@
             // Log to check if the function is being called
             console.log("Starting auto scroll...");
 
+            // Clear any existing interval to avoid multiple intervals
+            clearInterval(cityExplore.scrollInterval);
+
             // Set the scrolling interval
-            let scrollInterval = setInterval(autoScroll, 50);
+            cityExplore.scrollInterval = setInterval(autoScroll, 50);
+        }
+
+        // Clear the interval when the user navigates away
+        window.addEventListener('beforeunload', function () {
+            clearInterval(cityExplore.scrollInterval);
         });
+
     </script>
     <script>
         // Array of images for the tirupati slideshow
@@ -647,9 +659,6 @@
         // Set interval for slideshow (every 3 seconds)
         setInterval(kurImage, 3000); // 3000 milliseconds = 3 seconds
     </script>
-
-
->>>>>>> 7f8a99308a1cf183b9cca9d8fce745f5b6ce85b6
 </body>
 
 </html>
