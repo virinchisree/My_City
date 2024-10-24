@@ -492,6 +492,37 @@
             <p class="copy-rights">Copyright © 2024 MyCity. All rights reserved.</p>
         </div>
     </footer>
+<<<<<<< HEAD
+    <Script>
+        document.body.addEventListener('htmx:afterSwap', function (event) {
+    const cityExplore = document.querySelector('.city-explore');
+
+    if (!cityExplore) {
+        console.error("Element with class 'city-explore' not found.");
+        return; // Exit if the element is not found
+    }
+
+    let scrollSpeed = 2; // Speed of scrolling (in pixels)
+
+    // Function to scroll the container
+    function autoScroll() {
+        cityExplore.scrollLeft += scrollSpeed;
+
+        // If the scroll reaches the end, reset to the beginning
+        if (cityExplore.scrollLeft >= cityExplore.scrollWidth - cityExplore.clientWidth) {
+            cityExplore.scrollLeft = 0;
+        }
+    }
+
+    // Log to check if the function is being called
+    console.log("Starting auto scroll...");
+
+    // Set the scrolling interval
+    let scrollInterval = setInterval(autoScroll, 50);
+});
+
+    </Script>
+=======
     <script>
         document.body.addEventListener('htmx:afterSwap', function (event) {
             const cityExplore = document.querySelector('.city-explore');
@@ -618,6 +649,7 @@
     </script>
 
 
+>>>>>>> 7f8a99308a1cf183b9cca9d8fce745f5b6ce85b6
 </body>
 
 </html>

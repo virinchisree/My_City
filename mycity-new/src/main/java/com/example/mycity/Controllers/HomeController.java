@@ -54,7 +54,14 @@ public class HomeController {
     public String AlluriSitharamaRaju() {
         return "AlluriSitharamaRaju-Tourism";
     }
-    
+    @GetMapping("/Tourism/AlluriSitharamaRaju/Aaraku")
+    public String getAaraku(){
+        return "Tourism/AlluriSitharamaRaju/Aaraku";
+    }
+    @GetMapping("/Tourism/AlluriSitharamaRaju/Borracaves")
+    public String getBorracaves(){
+        return "Tourism/AlluriSitharamaRaju/Borracaves";
+    }
     @GetMapping("/Tourism/AlluriSitharamaRaju/Lambasingi")
     public String getLambasingi() {
         return "/Tourism/AlluriSitharamaRaju/Lambasingi";
@@ -215,10 +222,6 @@ public class HomeController {
     public String getChandra() {
         return "Tourism/Chittor/Chandragirifort";
     }
-    @GetMapping("/Tourism/Chittor/Kalahasti")
-    public String getkalahasti() {
-        return "Tourism/Chittor/Kalahasti";
-    }
     @GetMapping("/Tourism/Chittor/Kailasakona")
     public String getkailasakona() {
         return "Tourism/Chittor/Kailasakona";
@@ -287,6 +290,7 @@ public class HomeController {
     public String annamayyaSpot(){
         return "Annamayya-Tourism";
     }
+
     @GetMapping("/Tourism/Annamayya/Attirala")
     public String getAttirala(){
         return "Tourism/Annamayya/Attirala";
@@ -361,15 +365,6 @@ public class HomeController {
     @GetMapping("/Visakhapatnam-Tourism")
     public String vizagSpot(){
         return "Visakhapatnam-Tourism";
-    }
-    @GetMapping("/Tourism/Visakhapatnam/Aaraku")
-    public String getAaraku(){
-        return "Tourism/Visakhapatnam/Aaraku";
-    }
-
-    @GetMapping("/Tourism/Visakhapatnam/Borracaves")
-    public String getBorracaves(){
-        return "Tourism/Visakhapatnam/Borracaves";
     }
     @GetMapping("/Tourism/Visakhapatnam/Kailasgiri")
     public String getKailasgiri(){
@@ -479,10 +474,6 @@ public class HomeController {
     public String WestGodavariSpot() {
     	return "West-Tourism";
     }
-    @GetMapping("/Tourism/WestGodavari/Buddhist")
-    public String getBuddhist() {
-    	return "Tourism/WestGodavari/Buddhist";
-    }
     @GetMapping("/Tourism/WestGodavari/Sanctuary")
     public String getSanctuary() {
     	return "Tourism/WestGodavari/Sanctuary";
@@ -490,10 +481,6 @@ public class HomeController {
     @GetMapping("/Tourism/WestGodavari/Ramalingeswara")
     public String getRamalingeswara() {
     	return "Tourism/WestGodavari/Ramalingeswara";
-    }
-    @GetMapping("/Tourism/WestGodavari/Jaganmohini")
-    public String getJaganMohini() {
-    	return "Tourism/WestGodavari/Jaganmohini";
     }
     @GetMapping("/Tourism/WestGodavari/Papikondalu")
     public String getPapikondalu() {
@@ -542,6 +529,10 @@ public class HomeController {
     @GetMapping("/Tourism/YSR/Ameen-Peer-Dargah")
     public String getDargah() {
     	return "Tourism/YSR/Ameen-Peer-Dargah";
+    }
+    @GetMapping("/Tourism/YSR/Attirala")
+    public String getsAttirala(){
+        return "Tourism/YSR/Attirala";
     }
     @GetMapping("/Tourism/YSR/BelumCaves")
     public String getBelumCaves() {
@@ -628,6 +619,10 @@ public class HomeController {
     public String EastGodavariSpot() {
     	return "EastGodavari-Tourism";
     }
+    @GetMapping("/Tourism/EastGodavari/Jaganmohini")
+    public String getJaganMohini() {
+    	return "Tourism/EastGodavari/Jaganmohini";
+    }
     @GetMapping("/Tourism/EastGodavari/Pithapuram")
     public String getPithapuram() {
     	return "Tourism/EastGodavari/Pithapuram";
@@ -649,6 +644,10 @@ public class HomeController {
     @GetMapping("/Tourism/Eluru/kolleru")
     public String getKolleru() {
     	return "Tourism/Eluru/kolleru";
+    }
+    @GetMapping("/Tourism/Eluru/Buddhist")
+    public String getBuddhist() {
+    	return "Tourism/Eluru/Buddhist";
     }
     @GetMapping("/Tourism/Eluru/dwarakatirumala")
     public String getdwarakatirumala() {
@@ -764,7 +763,10 @@ public class HomeController {
     public String getZoo() {
         return "Tourism/Tirupathi/Zoo";
     }
-    
+    @GetMapping("/Tourism/Tirupathi/Kalahasti")
+    public String getkalahasti() {
+        return "Tourism/Tirupathi/Kalahasti";
+    }
     @GetMapping("/Tourism/Tirupathi/TTD")
     public String getTTD() {
         return "Tourism/Tirupathi/TTD";
