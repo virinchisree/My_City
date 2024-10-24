@@ -43,21 +43,4 @@ mobileHeader.addEventListener('click', function() {
 });
 
 /*this is for the gallery scrolling*/
-window.onload = function () {
-    const cityExplore = document.querySelector('.city-explore');
 
-    let scrollSpeed = 3; // Speed of scrolling (in pixels)
-
-    // Function to scroll the container
-    function autoScroll() {
-        cityExplore.scrollLeft += scrollSpeed;
-
-        // If the scroll reaches the end, reset to the beginning
-        if (cityExplore.scrollLeft >= cityExplore.scrollWidth - cityExplore.clientWidth) {
-            cityExplore.scrollLeft = 0;
-        }
-    }
-
-    // Set the scrolling interval
-    let scrollInterval = setInterval(autoScroll, 50);
-};
