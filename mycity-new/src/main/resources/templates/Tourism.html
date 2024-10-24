@@ -64,27 +64,38 @@
             loop></video>
     </div>
     <div class="cards_section">
-        <div class="hot_card">
-            <img src="/img/tirupati.png" alt="Tirupati">
-            <div class="hot_card-title">Tirupati</div>
-        </div>
-        <div class="hot_card">
-            <img src="/img/vizianagaram.png" alt="Vizianagaram">
-            <div class="hot_card-title">Vizianagaram</div>
-        </div>
-        <div class="hot_card">
-            <img src="/img/ambedkar_Konaseema.png" alt="Konaseema">
-            <div class="hot_card-title">Konaseema</div>
-        </div>
-        <div class="hot_card">
-            <img src="/img/visakhapatnam.jpg" alt="Visakhapatnam">
-            <div class="hot_card-title">Visakhapatnam</div>
-        </div>
-        <div class="hot_card">
-            <img src="/img/kurnool.png" alt="Kurnool">
-            <div class="hot_card-title">Kurnool</div>
-        </div>
+        <a th:href="@{/Tirupathi-Tourism}">
+            <div class="hot_card">
+                <img src="/img/tirupati.png" alt="Tirupati" id="tri-slideshow">
+                <div class="hot_card-title">Tirupati</div>
+            </div>
+        </a>
+        <a th:href="@{/Vzm-Tourism}">
+            <div class="hot_card">
+                <img src="/img/vizianagaram.png" alt="Vizianagaram" id="vzm-slideshow">
+                <div class="hot_card-title">Vizianagaram</div>
+            </div>
+        </a>
+        <a th:href="@{/Konaseema-Tourism}">
+            <div class="hot_card">
+                <img src="/img/ambedkar_Konaseema.png" alt="Konaseema" id="kona-slideshow">
+                <div class="hot_card-title">Konaseema</div>
+            </div>
+        </a>
+        <a th:href="@{/Visakhapatnam-Tourism}">
+            <div class="hot_card">
+                <img src="/img/visakhapatnam.jpg" alt="Visakhapatnam" id="visa-slideshow">
+                <div class="hot_card-title">Visakhapatnam</div>
+            </div>
+        </a>
+        <a th:href="@{/Kurnool-Tourism}">
+            <div class="hot_card">
+                <img src="/img/kurnool.png" alt="Kurnool" id="kur-slideshow">
+                <div class="hot_card-title">Kurnool</div>
+            </div>
+        </a>
     </div>
+
     <div class="container">
         <div class="page_header">
             <h1 class="explore">Explore Destinations</h1>
@@ -93,8 +104,7 @@
             <!-- Card 1 -->
             <a th:href="@{/AlluriSitharamaRaju-Tourism}" style="text-decoration: none;">
                 <div class="card">
-                    <img src="/Img/Alluri Sitharama raju/allurisitharamaraju.webp"
-                        alt="Destination Image">
+                    <img src="/Img/Alluri Sitharama raju/allurisitharamaraju.webp" alt="Destination Image">
                     <div class="card-content">
                         <div class="card-title">Alluri Sitharama Raju</div>
                     </div>
@@ -482,6 +492,7 @@
             <p class="copy-rights">Copyright © 2024 MyCity. All rights reserved.</p>
         </div>
     </footer>
+<<<<<<< HEAD
     <Script>
         document.body.addEventListener('htmx:afterSwap', function (event) {
     const cityExplore = document.querySelector('.city-explore');
@@ -511,6 +522,134 @@
 });
 
     </Script>
+=======
+    <script>
+        document.body.addEventListener('htmx:afterSwap', function (event) {
+            const cityExplore = document.querySelector('.city-explore');
+
+            if (!cityExplore) {
+                console.error("Element with class 'city-explore' not found.");
+                return; // Exit if the element is not found
+            }
+
+            let scrollSpeed = 2; // Speed of scrolling (in pixels)
+
+            // Function to scroll the container
+            function autoScroll() {
+                cityExplore.scrollLeft += scrollSpeed;
+
+                // If the scroll reaches the end, reset to the beginning
+                if (cityExplore.scrollLeft >= cityExplore.scrollWidth - cityExplore.clientWidth) {
+                    cityExplore.scrollLeft = 0;
+                }
+            }
+
+            // Log to check if the function is being called
+            console.log("Starting auto scroll...");
+
+            // Set the scrolling interval
+            let scrollInterval = setInterval(autoScroll, 50);
+        });
+    </script>
+    <script>
+        // Array of images for the tirupati slideshow
+        const tri_images = [
+            '/img/tirupati.png',
+            'https://imgcld.yatra.com/ytimages/image/upload/t_yt_blog_c_fill_q_auto:good_f_auto_w_800_h_500/v1536647411/Tirupati_Blog9876_1536646687.jpg',
+            'https://tirupatibalajitravels.co.in/wp-content/uploads/2024/02/special-entry-darshan-1.webp'
+        ];
+
+        let currentTri = 0; // Track the current image index
+
+        // Function to change the image
+        function triImage() {
+            const imageTri = document.getElementById('tri-slideshow');
+            currentTri = (currentTri + 1) % tri_images.length; // Increment index, loop back to 0
+            imageTri.src = tri_images[currentTri]; // Update image src
+        }
+
+        // Set interval for slideshow (every 3 seconds)
+        setInterval(triImage, 3000); // 3000 milliseconds = 3 seconds
+
+        // Array of images for the tirupati slideshow
+        const vzm_images = [
+            '/img/vizianagaram.png',
+            'https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2024/01/01/1a288f2c1bd3463f19adc52458b4303d_1000x1000.jpg',
+            'https://lh6.googleusercontent.com/proxy/XHGbmkdUhNI0Og-IX-qFNdLy2GnBJkdUHsoZ2wvCSRXgvajjoMKpeRe5drfRDgWW3hftZhICyZ0wY2uJiDrGNTmCzsHGUCxfw6vkGw'
+        ];
+
+        let currentVzm = 0; // Track the current image index
+
+        // Function to change the image
+        function vzmImage() {
+            const imageVzm = document.getElementById('vzm-slideshow');
+            currentVzm = (currentVzm + 1) % vzm_images.length; // Increment index, loop back to 0
+            imageVzm.src = vzm_images[currentVzm]; // Update image src
+        }
+
+        // Set interval for slideshow (every 3 seconds)
+        setInterval(vzmImage, 3000); // 3000 milliseconds = 3 seconds
+
+        /*This is for Konaseema District*/
+        const kona_images = [
+            '/img/ambedkar_Konaseema.png',
+            '/Img/antarvedi beach1.jpg',
+            '/Img/draksharam1.jpg'
+        ];
+
+        let currentKona = 0; // Track the current image index
+
+        // Function to change the image
+        function konaImage() {
+            const imageKona = document.getElementById('kona-slideshow');
+            currentKona = (currentKona + 1) % kona_images.length; // Increment index, loop back to 0
+            imageKona.src = kona_images[currentKona]; // Update image src
+        }
+
+        // Set interval for slideshow (every 3 seconds)
+        setInterval(konaImage, 3000); // 3000 milliseconds = 3 seconds
+
+        /*This is for Konaseema District*/
+        const visa_images = [
+            '/img/visakhapatnam.jpg',
+            '/Img/rk5.jpg',
+            '/Img/vizag images/teneti.jpeg'
+        ];
+
+        let currentVisa = 0; // Track the current image index
+
+        // Function to change the image
+        function visaImage() {
+            const imageVisa = document.getElementById('visa-slideshow');
+            currentVisa = (currentVisa + 1) % visa_images.length; // Increment index, loop back to 0
+            imageVisa.src = visa_images[currentVisa]; // Update image src
+        }
+
+        // Set interval for slideshow (every 3 seconds)
+        setInterval(visaImage, 3000); // 3000 milliseconds = 3 seconds
+
+        /*This is for Konaseema District*/
+        const kur_images = [
+            '/img/kurnool.png',
+            '/Img/yaganati 1.jpeg.jpg',
+            '/Img/mantralaya1.jpeg'
+        ];
+
+        let currentKur = 0; // Track the current image index
+
+        // Function to change the image
+        function kurImage() {
+            const imageKur = document.getElementById('kur-slideshow');
+            currentKur = (currentKur + 1) % kur_images.length; // Increment index, loop back to 0
+            imageKur.src = kur_images[currentKur]; // Update image src
+        }
+
+        // Set interval for slideshow (every 3 seconds)
+        setInterval(kurImage, 3000); // 3000 milliseconds = 3 seconds
+    </script>
+
+
+>>>>>>> 7f8a99308a1cf183b9cca9d8fce745f5b6ce85b6
 </body>
 
 </html>

@@ -672,6 +672,10 @@ button.show_deal{
     padding: 20px;
     background-color: transparent;
     transform: translate(0, 600%);
+    
+    a{
+        text-decoration: none;
+    }
 }
 
 .hot_card {
@@ -683,11 +687,12 @@ button.show_deal{
     overflow: hidden;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90% !important;
     transition: transform 0.3s ease-in-out;
 }
 
 .hot_card img {
-    width: 100%;
+    width: 100% !important;
     height: 200px;
     object-fit: cover;
 }

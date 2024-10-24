@@ -290,6 +290,15 @@ public class HomeController {
     public String annamayyaSpot(){
         return "Annamayya-Tourism";
     }
+
+    @GetMapping("/Tourism/Annamayya/Attirala")
+    public String getAttirala(){
+        return "Tourism/Annamayya/Attirala";
+    }
+    @GetMapping("/Tourism/Annamayya/Tarigonda")
+    public String getTarikonda(){
+        return "Tourism/Annamayya/Tarigonda";
+    }
     @GetMapping("/Tourism/Annamayya/Horsely")
     public String getHorsely(){
         return "Tourism/Annamayya/Horsely";
@@ -522,7 +531,7 @@ public class HomeController {
     	return "Tourism/YSR/Ameen-Peer-Dargah";
     }
     @GetMapping("/Tourism/YSR/Attirala")
-    public String getAttirala(){
+    public String getsAttirala(){
         return "Tourism/YSR/Attirala";
     }
     @GetMapping("/Tourism/YSR/BelumCaves")

@@ -7,7 +7,9 @@
     <title>Sri Kalahasti</title>
     <link rel="stylesheet" href="/CSS/Styles.css">
     <script src="https://hammerjs.github.io/dist/hammer.js"></script>
-    <script src="https://unpkg.com/htmx.org@2.0.3" integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/htmx.org@2.0.3"
+        integrity="sha384-0895/pl2MU10Hqc6jd4RvrthNlDiE9U1tWmX7WRESftEDRosgxNsQG/Ze9YMRzHq"
+        crossorigin="anonymous"></script>
 
 </head>
 
@@ -36,7 +38,7 @@
     <div class="carousel">
         <div class="carousel_header">
             <h1>Explore Sri Kalahasti</h1>
-            <h2>(Chittor, Andhra Pradesh)</h2>
+            <h2>(Tirupati, Andhra Pradesh)</h2>
         </div>
         <div class="items">
             <div class="item active">
@@ -121,7 +123,7 @@
 
     <div class="main-container">
         <div class="heading">
-         
+
         </div>
         <div class="use-timings">
             <h2>Opening and Closing Timings</h2>
@@ -191,44 +193,45 @@
     // I will be creating a different pen with touch support but right // now I have no time for it due to school
 
     const slider = document.querySelector(".items");
-const slides = document.querySelectorAll(".item");
-const button = document.querySelectorAll(".button");
+    const slides = document.querySelectorAll(".item");
+    const button = document.querySelectorAll(".button");
 
-let current = 0;
-let prev = 3; // For 4 images, the previous image index will be 3 (the last one).
-let next = 1; // The next image index will start from 1 (the second one).
+    let current = 0;
+    let prev = 3; // For 4 images, the previous image index will be 3 (the last one).
+    let next = 1; // The next image index will start from 1 (the second one).
 
-for (let i = 0; i < button.length; i++) {
-	button[i].addEventListener("click", () => i == 0 ? gotoPrev() : gotoNext());
-}
+    for (let i = 0; i < button.length; i++) {
+        button[i].addEventListener("click", () => i == 0 ? gotoPrev() : gotoNext());
+    }
 
-const gotoPrev = () => current > 0 ? gotoNum(current - 1) : gotoNum(slides.length - 1);
+    const gotoPrev = () => current > 0 ? gotoNum(current - 1) : gotoNum(slides.length - 1);
 
-const gotoNext = () => current < 3 ? gotoNum(current + 1) : gotoNum(0);
+    const gotoNext = () => current < 3 ? gotoNum(current + 1) : gotoNum(0);
 
-const gotoNum = number => {
-	current = number;
-	prev = current - 1;
-	next = current + 1;
+    const gotoNum = number => {
+        current = number;
+        prev = current - 1;
+        next = current + 1;
 
-	for (let i = 0; i < slides.length; i++) {
-		slides[i].classList.remove("active");
-		slides[i].classList.remove("prev");
-		slides[i].classList.remove("next");
-	}
+        for (let i = 0; i < slides.length; i++) {
+            slides[i].classList.remove("active");
+            slides[i].classList.remove("prev");
+            slides[i].classList.remove("next");
+        }
 
-	// Wrap the indices around if they go out of bounds
-	if (next == 4) {
-		next = 0;
-	}
+        // Wrap the indices around if they go out of bounds
+        if (next == 4) {
+            next = 0;
+        }
 
-	if (prev == -1) {
-		prev = 3;
-	}
+        if (prev == -1) {
+            prev = 3;
+        }
 
-	slides[current].classList.add("active");
-	slides[prev].classList.add("prev");
-	slides[next].classList.add("next");
-}
+        slides[current].classList.add("active");
+        slides[prev].classList.add("prev");
+        slides[next].classList.add("next");
+    }
 </script>
+
 </html>
