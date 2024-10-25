@@ -490,7 +490,7 @@ public class HomeController {
     }
     @GetMapping("/Tourism/Nandyala/ahobilam")
     public String getahobilam() {
-    	return "Tourism/Kurnool/ahobilam";
+    	return "Tourism/Nandyala/ahobilam";
     }
     @GetMapping("/Tourism/Nandyala/rollapadu")
     public String getRollapadu() {

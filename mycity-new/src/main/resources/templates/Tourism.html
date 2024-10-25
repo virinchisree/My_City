@@ -493,62 +493,50 @@
         </div>
     </footer>
     <Script>
-        document.body.addEventListener('htmx:afterSwap', function (event) {
-        const cityExplore = document.querySelector('.city-explore');
-
-        if (!cityExplore) {
-        console.error("Element with class 'city-explore' not found.");
-        return; // Exit if the element is not found
-        }
-
-        let scrollSpeed = 2; // Speed of scrolling (in pixels)
-
-        // Function to scroll the container
-        function autoScroll() {
-        cityExplore.scrollLeft += scrollSpeed;
-
-        // If the scroll reaches the end, reset to the beginning
-        if (cityExplore.scrollLeft >= cityExplore.scrollWidth - cityExplore.clientWidth) {
-        cityExplore.scrollLeft = 0;
-        }
-        }
-
-        // Log to check if the function is being called
-        console.log("Starting auto scroll...");
-
-        // Set the scrolling interval
-        let scrollInterval = setInterval(autoScroll, 50);
-        });
-
-        </Script>
-        
-        <script>
-            document.body.addEventListener('htmx:afterSwap', function (event) {
-                const cityExplore = document.querySelector('.city-explore');
-
-                if (!cityExplore) {
-                    console.error("Element with class 'city-explore' not found.");
-                    return; // Exit if the element is not found
+        function startAutoScroll() {
+            const cityExplore = document.querySelector('.city-explore');
+ 
+            if (!cityExplore) {
+                console.error("Element with class 'city-explore' not found.");
+                return; // Exit if the element is not found
+            }
+ 
+            let scrollSpeed = 10; // Speed of scrolling (in pixels)
+ 
+            // Function to scroll the container
+            function autoScroll() {
+                cityExplore.scrollLeft += scrollSpeed;
+ 
+                // If the scroll reaches the end, reset to the beginning
+                if (cityExplore.scrollLeft >= cityExplore.scrollWidth - cityExplore.clientWidth) {
+                    cityExplore.scrollLeft = 0;
                 }
-
-                let scrollSpeed = 2; // Speed of scrolling (in pixels)
-
-                // Function to scroll the container
-                function autoScroll() {
-                    cityExplore.scrollLeft += scrollSpeed;
-
-                    // If the scroll reaches the end, reset to the beginning
-                    if (cityExplore.scrollLeft >= cityExplore.scrollWidth - cityExplore.clientWidth) {
-                        cityExplore.scrollLeft = 0;
-                    }
-                }
-
-                // Log to check if the function is being called
-                console.log("Starting auto scroll...");
-
-                // Set the scrolling interval
-                let scrollInterval = setInterval(autoScroll, 50);
-            });
+            }
+ 
+            // Log to check if the function is being called
+            console.log("Starting auto scroll...");
+ 
+            // Clear any existing interval to avoid multiple intervals
+            clearIntervalIfExists();
+ 
+            // Set the scrolling interval
+            cityExplore.scrollInterval = setInterval(autoScroll, 50);
+        }
+ 
+        // Function to clear the interval if it exists
+        function clearIntervalIfExists() {
+            const cityExplore = document.querySelector('.city-explore');
+            if (cityExplore && cityExplore.scrollInterval) {
+                clearInterval(cityExplore.scrollInterval);
+                cityExplore.scrollInterval = null;
+            }
+        }
+ 
+        // Event listeners
+        document.body.addEventListener('htmx:afterSwap', startAutoScroll);
+        document.body.addEventListener('htmx:load', startAutoScroll); // Listen for HTMX load
+        window.addEventListener('load', startAutoScroll); // Start on page load
+        window.addEventListener('beforeunload', clearIntervalIfExists); // Clear on unload
         </script>
         <script>
             // Array of images for the tirupati slideshow
