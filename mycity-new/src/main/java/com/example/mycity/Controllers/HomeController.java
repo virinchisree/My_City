@@ -148,12 +148,6 @@ public class HomeController {
     public String getAnanthapuramu() {
         return "Ananthapuramu-Tourism";
     }
-    
-    @GetMapping("/Tourism/Ananthapuramu/AhobilamTemple")
-    public String getAhobilamTemple() {
-        return "/Tourism/Ananthapuramu/AhobilamTemple";
-    }
-
     @GetMapping("/Tourism/Ananthapuramu/BuggaRamalingeswaraSwamiTemple")
     public String getBuggaRamalingeswaraSwamiTemple() {
         return "/Tourism/Ananthapuramu/BuggaRamalingeswaraSwamiTemple";
@@ -246,12 +240,6 @@ public class HomeController {
     public String getKondapalli() {
         return "Tourism/Ntr/Kondapallifort";
     }
-
-    @GetMapping("/Tourism/Ntr/Kondapallitoys")
-    public String getKondapallitoys() {
-        return "Tourism/Ntr/Kondapallitoys";
-    }
-
     @GetMapping("/Tourism/Ntr/Yogananda")
     public String getYogananda() {
         return "Tourism/Ntr/Yogananda";
@@ -500,6 +488,10 @@ public class HomeController {
     public String NandyalaSpot() {
     	return "Nandyala-Tourism";
     }
+    @GetMapping("/Tourism/Nandyala/ahobilam")
+    public String getahobilam() {
+    	return "Tourism/Kurnool/ahobilam";
+    }
     @GetMapping("/Tourism/Nandyala/rollapadu")
     public String getRollapadu() {
     	return "Tourism/Nandyala/rollapadu";
@@ -586,6 +578,11 @@ public class HomeController {
     @GetMapping("/Krishna-Tourism")
     public String KrishnaSpot() {
     	return "Krishna-Tourism";
+    }
+    
+    @GetMapping("/Tourism/Krishna/Kondapallitoys")
+    public String getKondapallitoys() {
+        return "Tourism/Krishna/Kondapallitoys";
     }
     @GetMapping("/Tourism/Krishna/Vijayawada")
     public String getVijayawada() {
@@ -728,10 +725,6 @@ public class HomeController {
     @GetMapping("/Kurnool-Tourism")
     public String KurnoolSpot() {
     	return "Kurnool-Tourism";
-    }
-    @GetMapping("/Tourism/Kurnool/ahobilam")
-    public String getahobilam() {
-    	return "Tourism/Kurnool/ahobilam";
     }
     @GetMapping("/Tourism/Kurnool/gandikota")
     public String getgandikota() {

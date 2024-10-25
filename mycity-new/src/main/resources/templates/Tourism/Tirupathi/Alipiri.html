@@ -40,14 +40,14 @@
         <div class="items">
             <div class="item active">
                 <img
-                    src="https://scontent.fvga2-4.fna.fbcdn.net/v/t39.30808-6/226948180_4221836384570047_8141853247828915016_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=3a1ebe&_nc_ohc=i3EcfNcS8OoQ7kNvgHdOm_w&_nc_ht=scontent.fvga2-4.fna&_nc_gid=AMHXFjVgsNjaYVIg2mT62Y8&oh=00_AYAoX3hnihUJKfIpUzSgx-V8Ed5I_Ap7kXfshJL1O66GJA&oe=6703ECA2">
+                    src="/Img/as1.jpg">
             </div>
             <div class=" item next">
-                <img src="https://tirupatibalajitravels.co.in/wp-content/uploads/2024/02/srivari-mettu-path-1.webp">
+                <img src="/Img/as2.jpg">
             </div>
 
             <div class="item prev">
-                <img src="https://tirupatibalajitravels.co.in/wp-content/uploads/2024/02/divya-darshan-1.webp">
+                <img src="/Img/as3.jpg">
             </div>
             <div class="button-container">
                 <div class="button">
@@ -79,7 +79,7 @@
     </div>
     <div class="container">
         <div class="section">
-            <img src="https://scontent.fvga2-4.fna.fbcdn.net/v/t39.30808-6/226948180_4221836384570047_8141853247828915016_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=3a1ebe&_nc_ohc=i3EcfNcS8OoQ7kNvgHdOm_w&_nc_ht=scontent.fvga2-4.fna&_nc_gid=AMHXFjVgsNjaYVIg2mT62Y8&oh=00_AYAoX3hnihUJKfIpUzSgx-V8Ed5I_Ap7kXfshJL1O66GJA&oe=6703ECA2"
+            <img src="/Img/as2.jpg"
                 alt="Image">
             <div class="text-section">
                 <h2>About</h2>
@@ -106,7 +106,7 @@
                     assist pilgrims in their journey.
                 </p>
             </div>
-            <img src="https://scontent.fvga2-2.fna.fbcdn.net/v/t1.6435-9/135476492_3642568389163519_6683330575910869210_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=7b2446&_nc_ohc=uo5R7in7uj0Q7kNvgG9wOcj&_nc_ht=scontent.fvga2-2.fna&_nc_gid=AORhKDrYQj1tPPrX5TfzSmJ&oh=00_AYClAQXpY4Uqd7_KCeSzwAB6EBTEMjT7p2XlY3pZ0sPDMA&oe=6725ACFA"
+            <img src="/Img/as4.jpg"
                 alt="Image">
         </div>
     </div>
@@ -181,44 +181,45 @@
     // I will be creating a different pen with touch support but right // now I have no time for it due to school
 
     const slider = document.querySelector(".items");
-    const slides = document.querySelectorAll(".item");
-    const button = document.querySelectorAll(".button");
+				const slides = document.querySelectorAll(".item");
+				const button = document.querySelectorAll(".button");
 
-    let current = 0;
-    let prev = 4;
-    let next = 1;
+				let current = 0;
+				let prev = 2; // For 3 images, the previous image index will be 2 (the last one).
+				let next = 1; // The next image index will start from 1 (the second one).
 
-    for (let i = 0; i < button.length; i++) {
-        button[i].addEventListener("click", () => i == 0 ? gotoPrev() : gotoNext());
-    }
+				for (let i = 0; i < button.length; i++) {
+					button[i].addEventListener("click", () => i == 0 ? gotoPrev() : gotoNext());
+				}
 
-    const gotoPrev = () => current > 0 ? gotoNum(current - 1) : gotoNum(slides.length - 1);
+				const gotoPrev = () => current > 0 ? gotoNum(current - 1) : gotoNum(slides.length - 1);
 
-    const gotoNext = () => current < 4 ? gotoNum(current + 1) : gotoNum(0);
+				const gotoNext = () => current < 2 ? gotoNum(current + 1) : gotoNum(0);
 
-    const gotoNum = number => {
-        current = number;
-        prev = current - 1;
-        next = current + 1;
+				const gotoNum = number => {
+					current = number;
+					prev = current - 1;
+					next = current + 1;
 
-        for (let i = 0; i < slides.length; i++) {
-            slides[i].classList.remove("active");
-            slides[i].classList.remove("prev");
-            slides[i].classList.remove("next");
-        }
+					for (let i = 0; i < slides.length; i++) {
+						slides[i].classList.remove("active");
+						slides[i].classList.remove("prev");
+						slides[i].classList.remove("next");
+					}
 
-        if (next == 5) {
-            next = 0;
-        }
+					// Wrap the indices around if they go out of bounds
+					if (next == 3) {
+						next = 0;
+					}
 
-        if (prev == -1) {
-            prev = 4;
-        }
+					if (prev == -1) {
+						prev = 2;
+					}
 
-        slides[current].classList.add("active");
-        slides[prev].classList.add("prev");
-        slides[next].classList.add("next");
-    }
+					slides[current].classList.add("active");
+					slides[prev].classList.add("prev");
+					slides[next].classList.add("next");
+				}
 </script>
 
 </html>
