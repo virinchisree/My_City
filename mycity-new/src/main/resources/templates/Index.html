@@ -307,7 +307,7 @@
             dots[slideIndex - 1].classList.add('active');
 
             // Change slide every 3 seconds
-            setTimeout(showSlides, 2000);
+            setTimeout(dealshowSlides, 2000);
         }
 
         // Show the specific slide when a dot is clicked
@@ -331,6 +331,12 @@
 
         // Initialize the slideshow
         dealshowSlides();
+
+        document.body.addEventListener('htmx:afterSwap', function () {
+            showSlides();
+            dealshowSlides();
+        });
+
 
     </script>
 </body>
