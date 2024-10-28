@@ -488,6 +488,10 @@ public class HomeController {
     public String NandyalaSpot() {
     	return "Nandyala-Tourism";
     }
+    @GetMapping("/Tourism/Nandyala/yaganti")
+    public String getyaganti() {
+    	return "Tourism/Nandyala/yaganti";
+    }
     @GetMapping("/Tourism/Nandyala/ahobilam")
     public String getahobilam() {
     	return "Tourism/Nandyala/ahobilam";
@@ -741,10 +745,6 @@ public class HomeController {
     @GetMapping("/Tourism/Kurnool/sakshiganapathi")
     public String getSakshiganapathi() {
     	return "Tourism/Kurnool/sakshiganapathi";
-    }
-    @GetMapping("/Tourism/Kurnool/yaganti")
-    public String getyaganti() {
-    	return "Tourism/Kurnool/yaganti";
     }
 
     @GetMapping("/Tirupathi-Tourism")
