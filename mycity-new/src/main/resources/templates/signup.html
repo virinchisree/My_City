@@ -97,20 +97,27 @@
         </div>
 
         <div class="form-container sign-in">
+ 
+     
+ 
             <form id="register" th:action="@{/processL}" method="post" th:object="${user}">
+                   <!-- Display success message if exists -->
+    <div th:if="${successMessage}" class="notification success" id="notification">
+        <p th:text="${successMessage}" style="color: green; font-size: 12px;"></p>
+    </div>
                 <h1>Sign In</h1>
-
+ 
                 <input type="email" id="email" name="email" placeholder="Email" required th:field="*{email}" />
                 <div th:if="${emailError}" class="error" style="color: red; width: 250px; font-size: 12px;">
                     <p th:text="${emailError}"></p> <!-- Displays the email error message -->
                 </div>
-
+ 
                 <input type="password" id="password" name="password" placeholder="Password" required
                     th:field="*{password}" />
                 <div th:if="${passwordError}" class="error" style="color: red; width: 250px; font-size: 12px;">
                     <p th:text="${passwordError}"></p> <!-- Displays the password error message -->
                 </div>
-
+ 
                 <button type="submit">Sign In</button>
             </form>
         </div>

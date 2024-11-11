@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.example.mycity.entity.User;
 import com.example.mycity.repository.UserRepository;
@@ -969,21 +970,21 @@ public String Contact() {
 
 
     @PostMapping("/processR")
-    public String processRegister(@Valid @ModelAttribute("user") User theUser, 
-                                  BindingResult theBindingResult, 
-                                  Model model) {
+    public String processRegister(@Valid @ModelAttribute("user") User theUser,
+                                  BindingResult theBindingResult,
+                                  Model model,RedirectAttributes redirectAttributes) {
         if (theBindingResult.hasErrors()) {
             model.addAttribute("signupActive", true); // Keep signup form active
             return "signup";  // Return to the signup page with errors
         }
-    
+   
         // Check if email already exists
         if (userRepository.findByEmail(theUser.getEmail()) != null) {
             theBindingResult.rejectValue("email", "error.user", "Email already registered");
             model.addAttribute("signupActive", true); // Keep signup form active
             return "signup"; // Return to the signup page with errors
         }
-
+ 
         if(userRepository.findByMobile(theUser.getMobile())!=null){
             theBindingResult.rejectValue("mobile", "error.user", "Mobile number already registered");
             model.addAttribute("signupActive", true); // Keep signup form active
@@ -992,6 +993,11 @@ public String Contact() {
        
         // Proceed to save the user
         userRepository.save(theUser);
+ 
+         // Add flash attribute for success message
+    redirectAttributes.addFlashAttribute("successMessage", "You are successfully registered");
+    redirectAttributes.addFlashAttribute("notificationType", "success");
+ 
         return "redirect:/register#container";  // Redirect to the home page upon successful registration
     }
 
@@ -1045,4 +1051,26 @@ private boolean emailIsValid(String email) {
     // Implement your email validation logic here (e.g., regex check)
     return email.contains("@"); // Simple check; improve this with regex for production use
 }
+//Entertainment
+
+    @GetMapping("/Entertainment/home")
+    public String entertainmentPage(){
+        return "/Entertainment/home";
+    }
+
+    @GetMapping("/Entertainment/MyMusic")
+    public String entertainmentMusicPage(){
+        return "/Entertainment/Mymusic";
+    }
+
+    @GetMapping("/Entertainment/ShortFilms")
+    public String entertainmentShortFilmsPage(){
+        return "/Entertainment/telugu";
+    }
+
+    @GetMapping("/Entertainment/FilmNews")
+    public String entertainmentFilmPage(){
+        return "/Entertainment/fil";
+    }
+
 }
