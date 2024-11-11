@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entertainment - Movies</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/CSS/entertainment_styles.css">
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
@@ -12,19 +12,19 @@
         <nav class="navbar flex justify-between text-white items-center mx-[3rem]">
             <div class="navlinks-container flex h-[100%] items-center pl-8">
                 <p class="navlink" id="home-link">
-                    <a href="../src/home.html" class="hover:text-white">Home</a>
+                    <a href="/Entertainment/home" class="hover:text-white">Home</a>
                 </p>
                 <p class="navlink" id="movies-link">
-                    <a href="../src/movies.html" class="hover:text-white">Movies</a>
+                    <a href="/Entertainment/Movies" class="hover:text-white">Movies</a>
                 </p>
                 <p class="navlink" id="musics-link">
-                    <a href="../src/Mymusic.html" class="hover:text-white">Music</a>
+                    <a href="/Entertainment/MyMusic" class="hover:text-white">Music</a>
                 </p>
                 <p class="navlink" id="shortfilms-link">
-                    <a href="../src/telugu.html" class="hover:text-white">Short Films</a>
+                    <a href="/Entertainment/ShortFilms" class="hover:text-white">Short Films</a>
                 </p>
                 <p class="navlink" id="filmnews-link">
-                    <a href="../src/fil.html" class="hover:text-white">Film News</a>
+                    <a href="/Entertainment/FilmNews" class="hover:text-white">Film News</a>
                 </p>
             </div>
 
@@ -32,7 +32,7 @@
             <div class="SearchBar pr-10">
                 <div class="searchInput flex w-[160px] gap-[10px] p-[10px] border-[3px] rounded-[13px] border-liteOrange mt-3 cursor-pointer" onclick="searchExpand(event)">
                     <label for="searchbar">
-                        <img src="../src/assets/icons/search.svg" alt="search Icon" class="w-[25px]"/>
+                        <img src=" /icons/search.svg" alt="search Icon" class="w-[25px]"/>
                     </label>
                     <input type="text" placeholder="Search" id="searchbar" class="searchbar bg-transparent w-full placeholder-gray-500 placeholder:font-bold focus:outline-none transition"/>
                 </div>
@@ -49,7 +49,7 @@
 
     <div class='ml-[4rem] mb-[2rem] mt-[2rem]'>
         <div class='eventTitle flex items-center ml-[10px] gap-[10px] mb-[3rem]'>
-            <img src="../src/assets/icons/latest.svg" alt="Latest Image" class='w-[30px] h-[30px]' />
+            <img src="/icons/latest.svg" alt="Latest Image" class='w-[30px] h-[30px]' />
             <h1 class='title1'> New Release</h1>
         </div>
         <div class='flex gap-[6rem] overflow-x-scroll scrollbarhide' id="new-releases">
@@ -59,7 +59,7 @@
 
     <div class='ml-[4rem] mb-[2rem] mt-[4rem]'>
         <div class='eventTitle flex items-center ml-[10px] gap-[10px] mb-[3rem]'>
-            <img src="../src/assets/icons/latest.svg" alt="Latest Image" class='w-[30px] h-[30px]' />
+            <img src="/icons/latest.svg" alt="Latest Image" class='w-[30px] h-[30px]' />
             <h1 class='title1'> Upcoming Movies</h1>
         </div>
         <div class='flex gap-[6rem] overflow-x-scroll scrollbarhide' id="upcoming-movies">
@@ -67,7 +67,7 @@
         </div>
     </div>
 
-    <script type="module" src="../src/assets/js/movies.js"></script>
-    <script src="../src/assets/js/navbar.js"></script>
+    <script type="module" src="/JS/movies.js"></script>
+    <script src="/JS/navbar.js"></script>
 </body>
 </html>
