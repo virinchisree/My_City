@@ -7,7 +7,7 @@
     <title>Musics</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/CSS/entertainment_styles.css">
     <style>
         .hideText {
             display: none;
@@ -33,19 +33,19 @@
         <nav class="navbar flex justify-between text-white items-center mx-[3rem]">
             <div class="navlinks-container flex h-[100%] items-center pl-8">
                 <p class="navlink" id="home-link">
-                    <a href="../src/home.html" class="hover:text-white">Home</a>
+                    <a href="/Entertainment/home" class="hover:text-white">Home</a>
                 </p>
                 <p class="navlink" id="movies-link">
-                    <a href="../src/movies.html" class="hover:text-white">Movies</a>
+                    <a href="/Entertainment/Movies" class="hover:text-white">Movies</a>
                 </p>
-                <p class="navlink" id="Mymusic-link">
-                    <a href="../src/Mymusic.html" class="hover:text-white">Music</a>
+                <p class="navlink" id="musics-link">
+                    <a href="/Entertainment/MyMusic" class="hover:text-white">Music</a>
                 </p>
                 <p class="navlink" id="shortfilms-link">
-                    <a href="../src/telugu.html" class="hover:text-white">Short Films</a>
+                    <a href="/Entertainment/ShortFilms" class="hover:text-white">Short Films</a>
                 </p>
                 <p class="navlink" id="filmnews-link">
-                    <a href="../src/fil.html" class="hover:text-white">Film News</a>
+                    <a href="/Entertainment/FilmNews" class="hover:text-white">Film News</a>
                 </p>
             </div>
 
@@ -54,7 +54,7 @@
                 <div class="searchInput flex w-[160px] gap-[10px] p-[10px] border-[3px] rounded-[13px] border-liteOrange mt-3 cursor-pointer"
                     onclick="searchExpand(event)">
                     <label for="searchbar">
-                        <img src="../src/assets/icons/search.svg" alt="search Icon" class="w-[25px]" />
+                        <img src="/icons/search.svg" alt="search Icon" class="w-[25px]" />
                     </label>
                     <input type="text" placeholder="Search" id="searchbar"
                         class="searchbar bg-transparent w-full placeholder-gray-500 placeholder:font-bold focus:outline-none transition" />
@@ -69,7 +69,7 @@
         <!-- Trending Section -->
         <div class="musics-hero flex justify-end w-full pr-[10rem] relative">
             <div class="w-[450px] relative">
-                <img id="trending-image" src="" alt="Trending" class="w-[450px] grayscale-[10]" />
+                <img id="trending-image" src="./assets/songs/Die-With-A-Smile.jpg" alt="Trending" class="w-[450px] grayscale-[10]" />
                 <div class="coverblur w-full h-full absolute top-0 left-0"></div>
                 <div class="coverblur2 w-full h-full absolute top-0 left-0"></div>
             </div>
@@ -83,10 +83,10 @@
                     <div class="play-now bg-[#F37022] flex gap-4 px-[36px] py-[15px] rounded-[18px] cursor-pointer"
                         onclick="playNow()">
                         <p class="text-[20px] font-semibold">Play Now</p>
-                        <img src="../src/assets/icons/play1.svg" alt="play icon" width="20" />
+                        <img src="/icons/play1.svg" alt="play icon" width="20" />
                     </div>
                     <div class="add bg-white p-5 w-fit rounded-[12px] cursor-pointer" id="add-icon">
-                        <img src="../src/assets/icons/plus2.svg" alt="Plus Icon" class="plus-icon" />
+                        <img src="/icons/plus2.svg" alt="Plus Icon" class="plus-icon" />
                     </div>
                 </div>
             </div>
@@ -99,7 +99,7 @@
                 class="newRelease-container absolute w-[92%] h-[100%] bg-[#373636] rounded-3xl z-[100] px-8 py-3 gap-[4rem] hidden flex-col overflow-y-scroll scrollbarhide ">
                 <div class="flex w-full justify-between items-center">
                     <h1 class="title1">New Releases</h1>
-                    <img src="../src/assets/icons/close.svg" alt=""
+                    <img src="/icons/close.svg" alt=""
                         class="w-7 bg-[#66666645] p-1 rounded-lg cursor-pointer" id="closenewRelease" />
                 </div>
                 <div class="flex flex-col">
@@ -216,7 +216,7 @@
                     class=" flex-col bg-[#373636] w-full h-full absolute z-[999] left-0 top-0 rounded-[20px] px-3 py-[1rem] pr-[1.5rem] hidden">
                     <div class="flex justify-between w-full">
                         <h1 class="title2 text-[20px]">My Playlist</h1>
-                        <img src="../src/assets/icons/close.svg" alt="close button"
+                        <img src="/icons/close.svg" alt="close button"
                             class="w-5 cursor-pointer hover:scale-[1.2]" id="closebutton" />
                     </div>
                     <div class="list-queue mt-[4rem] flex flex-col gap-1 overflow-y-scroll scrollbarhide h-[80%]"
@@ -227,7 +227,7 @@
 
                 <div class="nowplaying flex justify-between items-center">
                     <h1 class="font-bold text-[15px]">Now Playing</h1>
-                    <img id="openPlaylist" src="../src/assets/icons/playlist.svg" alt="Playlist icon"
+                    <img id="openPlaylist" src="/icons/playlist.svg" alt="Playlist icon"
                         class="cursor-pointer" />
 
                 </div>
@@ -236,7 +236,7 @@
                 <div class="album-content flex flex-col gap-[3rem]">
                     
                     <div class="playlist-album flex items-center flex-col justify-center mt-[3rem] translate-y-[2rem]">
-                        <img id="trackImage" src="" alt="" class="w-[150px] mb-[1rem]" />
+                        <img id="trackImage" src="/assets/songs/Baby-O-Rendu_Prema-Meghaalila.jpg" alt="" class="w-[150px] mb-[1rem]" />
                         <p id="trackTitle" class="text-[20px] font-bold"></p>
                         <p id="trackArtist" class="text-[15px] font-normal"></p>
                     </div>
@@ -255,20 +255,20 @@
                         <div class="controls mt-[3rem] flex justify-between items-center">
                             <div class="loop flex flex-col items-center">
                                 <img id="loopBtn" class="cursor-pointer w-[16px] scalable loop"
-                                    src="../src/assets/icons/loop2.svg" alt="loop" />
+                                    src="/icons/loop2.svg" alt="loop" />
                                 <div id="loopIndicator" class="shuffledot w-1 h-1 rounded-full bg-[#ffffff] hidden">
                                 </div>
                             </div>
-                            <img id="prevBtn" src="../src/assets/icons/previouswhite.svg" alt="previous"
+                            <img id="prevBtn" src="/icons/previouswhite.svg" alt="previous"
                                 class="cursor-pointer" />
                             <div class="px-[18px] py-[17px] bg-[#F37022] rounded-[10px] cursor-pointer">
-                                <img id="playPauseBtn" src="../src/assets/icons/play1.svg" alt="play" width="16" />
+                                <img id="playPauseBtn" src="/icons/play1.svg" alt="play" width="16" />
                             </div>
-                            <img id="nextBtn" src="../src/assets/icons/nextwhite.svg" alt="next"
+                            <img id="nextBtn" src="/icons/nextwhite.svg" alt="next"
                                 class="cursor-pointer" />
                             <div class="shuffle flex flex-col items-center">
                                 <img id="shuffleBtn" class="cursor-pointer scalable"
-                                    src="../src/assets/icons/shuffle2.svg" alt="shuffle" />
+                                    src="/icons/shuffle2.svg" alt="shuffle" />
                                 <div id="shuffleIndicator" class="shuffledot w-1 h-1 rounded-full bg-[#ffffff] hidden">
                                 </div>
                             </div>
@@ -279,7 +279,7 @@
                 <div class="lyrics flex items-center flex-col gap-2 mt-[3rem] cursor-pointer absolute bottom-1 translate-x-[-50%] left-[50%]"
                     id="lyricsButton">
                     <p class="font-light text-[14px] song-name hideText">Song</p>
-                    <img src="../src/assets/icons/arrowup.svg" alt="Up Arrow" width="15" class="uparrow duration-500" />
+                    <img src="/icons/arrowup.svg" alt="Up Arrow" width="15" class="uparrow duration-500" />
                     <p class="font-light text-[14px] lyrics-name">LYRICS</p>
                 </div>
 
@@ -300,12 +300,12 @@
         <audio id="audioPlayer" src="" preload="metadata"></audio>
     </div>
 
-    <script type="module" src="../src/assets/js/musics.js"></script>
-    <script type="module" src="../src/assets/js/player.js"></script>
-    <script type="module" src="../src/assets/data/js/spotify.js"></script>
-    <script src="../src/assets/js/navbar.js"></script>
-    <script src="../src/assets/js/Myspotify.js"></script>
-    <script src="../src/assets/js/newrelease.js"></script>
+    <script type="module" src="./assets/js/musics.js"></script>
+    <script type="module" src="./assets/js/player.js"></script>
+    <script type="module" src="./assets/data/js/spotify.js"></script>
+    <script src="./assets/js/navbar.js"></script>
+    <script src="./assets/js/Myspotify.js"></script>
+    <script src="./assets/js/newrelease.js"></script>
     <!-- <script>
         document.getElementById('searchbar').addEventListener('keypress', function (event) {
             if (event.key === 'Enter') {
@@ -322,7 +322,7 @@
         });
     </script> -->
     <div class="bg-[#F37022] px-[2rem] py-[1rem] flex justify-between items-center text-white">
-        <a href="about.html" class="font-poppins font-medium text-[20px]">About Us</a>
+        <a href="about" class="font-poppins font-medium text-[20px]">About Us</a>
         <a href="#" class="font-poppins font-medium text-[20px]">Contact Us</a>
         <div class="socials flex gap-[20px]" id="socialMediaLinks">
             <!-- Social media links will be inserted here dynamically -->

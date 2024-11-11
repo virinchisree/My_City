@@ -1058,6 +1058,11 @@ private boolean emailIsValid(String email) {
         return "/Entertainment/home";
     }
 
+    @GetMapping("/Entertainment/Movies")
+    public String entertainmentMoviesPage(){
+        return "/Entertainment/movies";
+    }
+
     @GetMapping("/Entertainment/MyMusic")
     public String entertainmentMusicPage(){
         return "/Entertainment/Mymusic";
