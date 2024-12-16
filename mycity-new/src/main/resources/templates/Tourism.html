@@ -13,7 +13,7 @@
         crossorigin="anonymous"></script>
 </head>
 
-<body hx-boost="true">
+<body>
     <div class="nav_header" id="myHeader">
         <div class="mobile_header">
             <svg width="32px" height="32px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -495,34 +495,34 @@
     <Script>
         function startAutoScroll() {
             const cityExplore = document.querySelector('.city-explore');
- 
+
             if (!cityExplore) {
                 console.error("Element with class 'city-explore' not found.");
                 return; // Exit if the element is not found
             }
- 
+
             let scrollSpeed = 10; // Speed of scrolling (in pixels)
- 
+
             // Function to scroll the container
             function autoScroll() {
                 cityExplore.scrollLeft += scrollSpeed;
- 
+
                 // If the scroll reaches the end, reset to the beginning
                 if (cityExplore.scrollLeft >= cityExplore.scrollWidth - cityExplore.clientWidth) {
                     cityExplore.scrollLeft = 0;
                 }
             }
- 
+
             // Log to check if the function is being called
             console.log("Starting auto scroll...");
- 
+
             // Clear any existing interval to avoid multiple intervals
             clearIntervalIfExists();
- 
+
             // Set the scrolling interval
             cityExplore.scrollInterval = setInterval(autoScroll, 50);
         }
- 
+
         // Function to clear the interval if it exists
         function clearIntervalIfExists() {
             const cityExplore = document.querySelector('.city-explore');
@@ -531,51 +531,15 @@
                 cityExplore.scrollInterval = null;
             }
         }
- 
+
         // Event listeners
         document.body.addEventListener('htmx:afterSwap', startAutoScroll);
         document.body.addEventListener('htmx:load', startAutoScroll); // Listen for HTMX load
-        window.addEventListener('load', startAutoScroll); // Start on page load
+        document.body.removeEventListener('htmx:beforeSwap', startAutoScroll);
+        // window.addEventListener('load', startAutoScroll); // Start on page load
         window.addEventListener('beforeunload', clearIntervalIfExists); // Clear on unload
 
     </Script>
-    
-    <script>
-        document.body.addEventListener('htmx:afterSwap', startAutoScroll);
-
-        // Start scrolling when the page loads
-        window.addEventListener('load', startAutoScroll);
-
-        function startAutoScroll() {
-            const cityExplore = document.querySelector('.city-explore');
-
-
-                if (!cityExplore) {
-                    console.error("Element with class 'city-explore' not found.");
-                    return; // Exit if the element is not found
-                }
-
-                let scrollSpeed = 2; // Speed of scrolling (in pixels)
-
-                // Function to scroll the container
-                function autoScroll() {
-                    cityExplore.scrollLeft += scrollSpeed;
-
-                    // If the scroll reaches the end, reset to the beginning
-                    if (cityExplore.scrollLeft >= cityExplore.scrollWidth - cityExplore.clientWidth) {
-                        cityExplore.scrollLeft = 0;
-                    }
-                }
-
-
-                // Log to check if the function is being called
-                console.log("Starting auto scroll...");
-
-                // Set the scrolling interval
-                let scrollInterval = setInterval(autoScroll, 50);
-            };
-
-        </script>
     <script>
         // Array of images for the tirupati slideshow
         const tri_images = [
@@ -593,85 +557,82 @@
             imageTri.src = tri_images[currentTri]; // Update image src
         }
 
-            // Set interval for slideshow (every 3 seconds)
-            setInterval(triImage, 3000); // 3000 milliseconds = 3 seconds
+        // Set interval for slideshow (every 3 seconds)
+        setInterval(triImage, 3000); // 3000 milliseconds = 3 seconds
 
-            // Array of images for the tirupati slideshow
-            const vzm_images = [
-                '/img/vizianagaram.png',
-                'https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2024/01/01/1a288f2c1bd3463f19adc52458b4303d_1000x1000.jpg',
-                '/img/vzmfort.jpg'
-            ];
+        // Array of images for the tirupati slideshow
+        const vzm_images = [
+            '/img/vizianagaram.png',
+            'https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2024/01/01/1a288f2c1bd3463f19adc52458b4303d_1000x1000.jpg',
+            '/img/vzmfort.jpg'
+        ];
 
-            let currentVzm = 0; // Track the current image index
+        let currentVzm = 0; // Track the current image index
 
-            // Function to change the image
-            function vzmImage() {
-                const imageVzm = document.getElementById('vzm-slideshow');
-                currentVzm = (currentVzm + 1) % vzm_images.length; // Increment index, loop back to 0
-                imageVzm.src = vzm_images[currentVzm]; // Update image src
-            }
+        // Function to change the image
+        function vzmImage() {
+            const imageVzm = document.getElementById('vzm-slideshow');
+            currentVzm = (currentVzm + 1) % vzm_images.length; // Increment index, loop back to 0
+            imageVzm.src = vzm_images[currentVzm]; // Update image src
+        }
 
-            // Set interval for slideshow (every 3 seconds)
-            setInterval(vzmImage, 3000); // 3000 milliseconds = 3 seconds
+        // Set interval for slideshow (every 3 seconds)
+        setInterval(vzmImage, 3000); // 3000 milliseconds = 3 seconds
 
-            /*This is for Konaseema District*/
-            const kona_images = [
-                '/img/ambedkar_Konaseema.png',
-                '/Img/antarvedi beach1.jpg',
-                '/Img/draksharam1.jpg  '
-            ];
+        /*This is for Konaseema District*/
+        const kona_images = [
+            '/img/ambedkar_Konaseema.png',
+            '/Img/antarvedi beach1.jpg',
+            '/Img/draksharam1.jpg  '
+        ];
 
-            let currentKona = 0; // Track the current image index
+        let currentKona = 0; // Track the current image index
 
-            // Function to change the image
-            function konaImage() {
-                const imageKona = document.getElementById('kona-slideshow');
-                currentKona = (currentKona + 1) % kona_images.length; // Increment index, loop back to 0
-                imageKona.src = kona_images[currentKona]; // Update image src
-            }
+        // Function to change the image
+        function konaImage() {
+            const imageKona = document.getElementById('kona-slideshow');
+            currentKona = (currentKona + 1) % kona_images.length; // Increment index, loop back to 0
+            imageKona.src = kona_images[currentKona]; // Update image src
+        }
 
-            // Set interval for slideshow (every 3 seconds)
-            setInterval(konaImage, 3000); // 3000 milliseconds = 3 seconds
+        // Set interval for slideshow (every 3 seconds)
+        setInterval(konaImage, 3000); // 3000 milliseconds = 3 seconds
 
-            /*This is for Konaseema District*/
-            const visa_images = [
-                '/img/visakhapatnam.jpg',
-                '/Img/rk5.jpg',
-                '/Img/vizag images/teneti.jpeg'
-            ];
+        /*This is for Konaseema District*/
+        const visa_images = [
+            '/img/visakhapatnam.jpg',
+            '/Img/rk5.jpg',
+            '/Img/vizag images/teneti.jpeg'
+        ];
 
-            let currentVisa = 0; // Track the current image index
+        let currentVisa = 0; // Track the current image index
 
-            // Function to change the image
-            function visaImage() {
-                const imageVisa = document.getElementById('visa-slideshow');
-                currentVisa = (currentVisa + 1) % visa_images.length; // Increment index, loop back to 0
-                imageVisa.src = visa_images[currentVisa]; // Update image src
-            }
+        // Function to change the image
+        function visaImage() {
+            const imageVisa = document.getElementById('visa-slideshow');
+            currentVisa = (currentVisa + 1) % visa_images.length; // Increment index, loop back to 0
+            imageVisa.src = visa_images[currentVisa]; // Update image src
+        }
 
-            // Set interval for slideshow (every 3 seconds)
-            setInterval(visaImage, 3000); // 3000 milliseconds = 3 seconds
+        // Set interval for slideshow (every 3 seconds)
+        setInterval(visaImage, 3000); // 3000 milliseconds = 3 seconds
 
-            /*This is for Konaseema District*/
-            const kur_images = [
-                '/img/kurnool.png',
-                '/Img/yaganati 1.jpeg.jpg',
-                '/Img/mantralaya1.jpeg'
-            ];
+        /*This is for Konaseema District*/
+        const kur_images = [
+            '/img/kurnool.png',
+            '/Img/yaganati 1.jpeg.jpg',
+            '/Img/mantralaya1.jpeg'
+        ];
 
-            let currentKur = 0; // Track the current image index
+        let currentKur = 0; // Track the current image index
 
-            // Function to change the image
-            function kurImage() {
-                const imageKur = document.getElementById('kur-slideshow');
-                currentKur = (currentKur + 1) % kur_images.length; // Increment index, loop back to 0
-                imageKur.src = kur_images[currentKur]; // Update image src
-            }
+        // Function to change the image
+        function kurImage() {
+            const imageKur = document.getElementById('kur-slideshow');
+            currentKur = (currentKur + 1) % kur_images.length; // Increment index, loop back to 0
+            imageKur.src = kur_images[currentKur]; // Update image src
+        }
 
-            // Set interval for slideshow (every 3 seconds)
-            setInterval(kurImage, 3000); // 3000 milliseconds = 3 seconds
-        </script>
         // Set interval for slideshow (every 3 seconds)
         setInterval(kurImage, 3000); // 3000 milliseconds = 3 seconds
     </script>

@@ -13,7 +13,7 @@
         crossorigin="anonymous"></script>
 </head>
 
-<body hx-boost="true">
+<body hx-boost="true" data-email="[[${email}]]">
     <div class="nav_header" id="myHeader">
         <div class="mobile_header">
             <svg width="32px" height="32px" viewBox="0 0 24.00 24.00" fill="none" xmlns="http://www.w3.org/2000/svg"
@@ -52,7 +52,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="login-button_placeholder">
+            <div class="login-button_placeholder" id="loginPlaceholder">
                 <button class="login_button">
                     <a href="/register" class="signup-btn">Sign Up</a>
                 </button>
@@ -164,7 +164,44 @@
             <p class="copy-rights">Copyright © 2024 MyCity. All rights reserved.</p>
         </div>
     </footer>
-    <script src="/JS/Script.js"></script>
+    <script th:src="@{/JS/Script.js}"></script>
+    <script>
+        window.onload = function () {
+            createProfile();
+        };
+
+        document.addEventListener("DOMContentLoaded", function () {
+            createProfile();
+        })
+
+        document.body.addEventListener('htmx:afterSwap', function () {
+            console.log("HTMX:afterSwap")
+            createProfile()
+        });
+
+        function createProfile() {
+            const userName = "[[${name}]]" || null;
+            const userEmail = "[[${email}]]" || null;
+            const userMobile = "[[${mobile}]]" || null;
+            const userAddress = "[[${address}]]" || null;
+
+            console.log(userName, userEmail, userMobile, userAddress);
+
+            const placeholderDiv = document.querySelector(".login-button_placeholder");
+            if (userName && userEmail && placeholderDiv) {
+                // Create avatar HTML
+                const avatarHTML = `
+        <div class="user-profile">
+            <img src="/path/to/avatar.png" alt="Avatar" class="user-avatar" />
+            <span class="user-name">${userName}</span>
+        </div>
+    `;
+
+                // Replace content
+                placeholderDiv.innerHTML = avatarHTML;
+            }
+        }
+    </script>
     <script>
         const slides = document.querySelector(".image-slides");
         const images = document.querySelectorAll(".image-slides img");
@@ -336,8 +373,6 @@
             showSlides();
             dealshowSlides();
         });
-
-
     </script>
 </body>
 

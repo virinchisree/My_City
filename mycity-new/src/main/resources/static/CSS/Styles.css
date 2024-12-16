@@ -425,6 +425,26 @@ ul {
     color: whitesmoke;
 }
 
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+}
+
+.user-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #F37022;
+}
+
+
 .video_placeholder {
     position: absolute;
     top: 0;
@@ -585,8 +605,8 @@ footer{
 .shop-hotdeals {
   width: 30%;
   position: relative;
-  left: 780px; /* Keep your specified left positioning */
-  top: -346px; /* Keep your specified top positioning */
+  left: 864px; /* Keep your specified left positioning */
+  top: -368px; /* Keep your specified top positioning */
   text-align: center;
 }
 
